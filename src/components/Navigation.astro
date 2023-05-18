@@ -1,9 +1,33 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro";
+let currentPage = Astro.url.pathname;
+
+const links = [
+    ["Posts", "/"],
+    ["Projects", "/projects/"],
+    ["Resume", "/tags/"],
+];
 ---
 
-<div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <a href="/tags/">Tags</a>
+<div class="flex flex-row space-x-5 w-full">
+    <a href="/" class="font-bold">Alex Bustos</a>
+    {
+        links.map(([title, link]) => {
+            return (
+                <a
+                    href={link}
+                    class:list={[
+                        { underline: currentPage === link },
+                        { "text-primary": currentPage === link },
+                    ]}
+                >
+                    {title}
+                </a>
+            );
+        })
+    }
+    <div class="flex-grow"></div>
+    <div class="flex items-center">
+        <ThemeToggle />
+    </div>
 </div>

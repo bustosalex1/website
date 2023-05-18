@@ -4,6 +4,12 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
+    <div class="text-sm breadcrumbs">
+        <ul>
+            <li>Posts</li>
+            <li>{frontmatter.title}</li>
+        </ul>
+    </div>
     <p>Published on {frontmatter.pubDate.slice(0, 10)}</p>
     <p><em>{frontmatter.description}</em></p>
     <p>Written by {frontmatter.author}</p>
@@ -17,7 +23,9 @@ const { frontmatter } = Astro.props;
             ))
         }
     </div>
-    <slot />
+    <article class="prose text-justify mx-auto">
+        <slot />
+    </article>
 </BaseLayout>
 
 <style>

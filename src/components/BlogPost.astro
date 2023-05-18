@@ -1,5 +1,42 @@
 ---
-const { url, title } = Astro.props;
+interface Props {
+    url: string | undefined;
+    title: string;
+    date: string;
+    tags: string[];
+}
+
+let { url, title, date, tags } = Astro.props;
+
+if (tags.length > 3) {
+    tags = tags.slice(0, 3);
+}
 ---
 
-<li><a href={url}>{title}</a></li>
+<li
+    class="flex flex-col w-full gap-1 rounded-md outline outline-1 outline-neutral-400 p-2"
+>
+    <div class="flex flex-row justify-between items-center">
+        <a href={url} class="hover:underline">{title}</a>
+        <div class="text-xs font-mono">
+            {
+                new Date(date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                })
+            }
+        </div>
+    </div>
+    <div class="flex flex-row gap-1">
+        {
+            tags.map((tag: string) => {
+                return (
+                    <div class="badge badge-outline text-xs capitalize text-neutral-400">
+                        {tag}
+                    </div>
+                );
+            })
+        }
+    </div>
+</li>
