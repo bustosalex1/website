@@ -2,15 +2,13 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 'TARGIT CubeSat Mission Electronics Subsystem'
 pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
+description: 'Electronics subsystem for a small satellite.'
 author: 'Alex Bustos'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'The full Astro logo.'
 tags: ['PCB design', 'electronics', 'project']
 ---
-
-## TARGIT CubeSat Mission Electronics Subsystem
 
 For a little background information, The Tethering and Ranging Mission of the Georgia Institute of Technology (TARGIT) is a CubeSat Mission with the primary objective of demonstrating a LiDAR imaging system on a CubeSat platform. In order to test this imaging system, the satellite will deploy a small target with its own power system, electronics, communications equipment, and sensors, that will inflate a mylar balloon. This mylar balloon will serve as the target for the satellite's imaging operations. You can read more about the project here.
 
