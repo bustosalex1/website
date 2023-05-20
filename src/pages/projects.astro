@@ -1,40 +1,20 @@
 ---
+import ProjectCard from "../components/ProjectCard.svelte";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const allPosts = await Astro.glob("../pages/posts/*.md");
 
+const filteredPosts = allPosts;
+// const filteredPosts = allPosts.filter((post) => {
+//     post.frontmatter.tags.includes("project");
+// });
+
 const pageTitle = "Projects";
-const test = [1, 2, 3, 4, 5, 6, 7];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <p class="text-sm">
-        Just some projects that I enjoyed. You can still find these under <a
-            href="/"
-            class="underline">Posts</a
-        >.
-    </p>
     <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2"
     >
-        {
-            test.map((index) => {
-                return (
-                    <div class="transition ease-in-out card card-compact w-full bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 outline outline-1 outline-neutral-400">
-                        <figure>
-                            <img src="../../demo_image.jpeg" alt="Shoes" />
-                        </figure>
-                        <div class="card-body">
-                            <h2 class="card-title">Bruh!</h2>
-                            <p>
-                                If a dog chews shoes whose shoes does he choose?
-                            </p>
-                            <div class="card-actions justify-end">
-                                <div class="text-xs italic">{index}</div>
-                            </div>
-                        </div>
-                    </div>
-                );
-            })
-        }
+        {filteredPosts.map((post) => <ProjectCard post={post} />)}
     </div>
 </BaseLayout>

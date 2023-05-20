@@ -5,7 +5,7 @@ pubDate: 2022-07-01
 description: 'Electronics subsystem for a small satellite.'
 author: 'Alex Bustos'
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    url: '../../../demo_image.jpeg'
     alt: 'The full Astro logo.'
 tags: ['PCB design', 'electronics', 'project']
 ---

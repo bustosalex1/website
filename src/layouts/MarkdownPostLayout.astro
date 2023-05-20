@@ -4,14 +4,10 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-    <div class="text-sm breadcrumbs py-0">
-        <ul>
-            <li><a href="/">Posts</a></li>
-            <li>{frontmatter.title}</li>
-        </ul>
-    </div>
-    <h1 class="text-2xl font-bold ">{frontmatter.title}</h1>
     <article class="prose text-justify leading-normal mx-auto">
+        <h1 class="text-2xl font-bold mx-auto text-left">
+            {frontmatter.title}
+        </h1>
         <slot />
     </article>
 </BaseLayout>
