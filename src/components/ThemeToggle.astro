@@ -1,8 +1,12 @@
+---
+import { modes } from "../styles/modes";
+---
+
 <label class="swap swap-rotate">
     <!-- this hidden checkbox controls the state -->
     <input
         type="checkbox"
-        data-toggle-theme="dark,light"
+        data-toggle-theme={`${modes.dark},${modes.light}`}
         data-active-class="ACTIVECLASS"
         id="theme-toggle"
         checked={false}
@@ -30,15 +34,19 @@
 </label>
 
 <script>
+    import { modes } from "../styles/modes";
+
     document.addEventListener("DOMContentLoaded", () => {
         let theme = localStorage.getItem("theme");
         const checkbox = document.getElementById(
             "theme-toggle"
         ) as HTMLInputElement;
-        console.log(theme);
-        checkbox.checked = theme === "dark";
+        checkbox.checked = theme === modes.dark;
         checkbox.addEventListener("click", () => {
-            localStorage.setItem("theme", theme === "dark" ? "light" : "dark");
+            localStorage.setItem(
+                "theme",
+                theme === modes.dark ? modes.light : modes.dark
+            );
         });
     });
 </script>

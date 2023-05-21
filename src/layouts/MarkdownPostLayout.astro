@@ -1,34 +1,27 @@
 ---
+import FormattedDate from "../components/FormattedDate.astro";
+import Tag from "../components/Tag.astro";
 import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
+const { data } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
-    <article class="prose text-justify leading-normal mx-auto">
-        <h1 class="text-2xl font-bold mx-auto text-left">
-            {frontmatter.title}
-        </h1>
+<BaseLayout pageTitle={data.title}>
+    <h1 class="text-2xl font-bold mx-auto text-center">
+        {data.title}
+    </h1>
+    <div class="mx-auto">
+        <FormattedDate date={data.pubDate} />
+    </div>
+    <div class="flex gap-2 flex-row flex-wrap">
+        {data.tags.map((tag: any) => <Tag tag={tag} />)}
+    </div>
+    <article class="prose text-justify leading-normal w-full mx-auto">
         <slot />
     </article>
 </BaseLayout>
 
-<style>
-    a {
-        color: #00539f;
-    }
-
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 auto;
-    }
-
-    .tag {
-        margin: 0.25em;
-        border: dotted 1px #a1a1a1;
-        border-radius: 0.5em;
-        padding: 0.5em 1em;
-        font-size: 1.15em;
-        background-color: #f8fcfd;
+<style is:global>
+    img {
+        @apply rounded-md;
     }
 </style>

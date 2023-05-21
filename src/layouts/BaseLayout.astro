@@ -1,10 +1,11 @@
 ---
 import Header from "../components/Header.astro";
 import "../styles/global.css";
+import { modes } from "../styles/modes";
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en" data-theme="light">
+<html lang="en" data-theme={modes.light}>
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -14,10 +15,7 @@ const { pageTitle } = Astro.props;
         <script is:inline>
             // ☝️ This script prevent the FART effect.
             const theme = localStorage.getItem("theme");
-            if (theme === null) {
-                document.documentElement.setAttribute("data-theme", "light");
-                localStorage.setItem("theme", "light");
-            } else {
+            if (theme !== null) {
                 document.documentElement.setAttribute("data-theme", theme);
             }
             // "theme" LocalStorage value is set by the package to remember user preference.

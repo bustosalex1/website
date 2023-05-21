@@ -3,13 +3,12 @@ title: 'TARGIT CubeSat Mission Electronics Subsystem'
 pubDate: 2022-07-01
 description: 'Electronics subsystem for a small satellite.'
 author: 'Alex Bustos'
-image: '../../assets/demo_image.jpeg'
+image: '../../assets/targitStructure-01.png'
 imageAlt: 'Demo image.'
 tags: ['PCB design', 'electronics', 'project']
 ---
 
-For a little background information, The Tethering and Ranging Mission of the Georgia Institute of Technology (TARGIT) is a CubeSat Mission with the primary objective of demonstrating a LiDAR imaging system on a CubeSat platform. In order to test this imaging system, the satellite will deploy a small target with its own power system, electronics, communications equipment, and sensors, that will inflate a mylar balloon. This mylar balloon will serve as the target for the satellite's imaging operations. You can read more about the project here[^1].
-
+For a little background information, The Tethering and Ranging Mission of the Georgia Institute of Technology (TARGIT) is a CubeSat Mission with the primary objective of demonstrating a LiDAR imaging system on a CubeSat platform. In order to test this imaging system, the satellite will deploy a small target with its own power system, electronics, communications equipment, and sensors, that will inflate a mylar balloon. This mylar balloon will serve as the target for the satellite's imaging operations. You can read more about the project here.
 ![alt text](../../assets/demo_image.jpeg 'title')
 When I first started on the project in the fall of 2018, I worked on developing some of the electronics systems for the target subsystem. Due to ITAR restrictions, I can't share a lot of specific details or files of my work, but I can explain the system requirements and functionality on a high level. The system is centered around the TinyZero Microcontroller, which is basically just a tiny 32-bit Arduino. I designed a motherboard for the TinyZero (Figure 1) that features power management/distribution features and a circuit that actuates solenoid valves to inflate the mylar balloon. I also designed a small shield for the TinyZero that allows it to interface with a radio transceiver. This radio transceiver is what communicates with the main satellite.
 
@@ -23,4 +22,3 @@ Over the course of two semesters, I learned how to use Autodesk EAGLE to design 
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
-[^1]: My reference.

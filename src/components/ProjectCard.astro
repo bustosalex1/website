@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
 interface Props {
     post: CollectionEntry<"posts">;
 }
@@ -16,21 +17,13 @@ const { post } = Astro.props;
     </figure>
     <div class="card-body">
         <a href={"/posts/" + post.slug}>
-            <h2 class="card-title hover:underline">
+            <h2 class="card-title hover:text-primary">
                 {post.data.title}
             </h2></a
         >
         <p>{post.data.description}</p>
         <div class="card-actions justify-end">
-            <div class="text-xs font-mono">
-                {
-                    post.data.pubDate.toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "2-digit",
-                        day: "2-digit",
-                    })
-                }
-            </div>
+            <FormattedDate date={post.data.pubDate} />
         </div>
     </div>
 </div>

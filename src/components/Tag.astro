@@ -1,0 +1,13 @@
+---
+interface Props {
+    tag: string;
+}
+
+const { tag } = Astro.props;
+---
+
+<div
+    class="badge badge-outline text-xs capitalize text-neutral-400 hover:text-primary whitespace-nowrap"
+>
+    <a href={"/tags/" + tag}>{tag}</a>
+</div>
