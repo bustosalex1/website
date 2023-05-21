@@ -2,7 +2,7 @@
 interface Props {
     url: string | undefined;
     title: string;
-    date: string;
+    date: Date;
     tags: string[];
 }
 
@@ -20,7 +20,7 @@ if (tags.length > 3) {
         <a href={url} class="hover:underline">{title}</a>
         <div class="text-xs font-mono">
             {
-                new Date(date).toLocaleDateString("en-US", {
+                date.toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "2-digit",
                     day: "2-digit",

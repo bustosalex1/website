@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+
+let filteredPosts = allPosts.sort((post1, post2) => {
+    return (
+        new Date(post2.data.pubDate).getTime() -
+        new Date(post1.data.pubDate).getTime()
+    );
+});
+const pageTitle = "Posts";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <ul class="flex flex-col gap-4">
+        {
+            filteredPosts.map((post) => (
+                <BlogPost
+                    url={"/posts/" + post.slug}
+                    title={post.data.title}
+                    date={post.data.pubDate}
+                    tags={post.data.tags}
+                />
+            ))
+        }
+    </ul>
+</BaseLayout>
