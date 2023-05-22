@@ -11,7 +11,7 @@ const { post } = Astro.props;
 
 <a href={"/posts/" + post.slug}>
     <div
-        class="transition ease-in-out card w-full bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 outline outline-1 outline-neutral-400 h-full"
+        class="transition ease-in-out card w-full bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 ring-1 ring-neutral-400 h-full"
     >
         <figure>
             <Image src={post.data.image} alt={post.data.imageAlt} />
