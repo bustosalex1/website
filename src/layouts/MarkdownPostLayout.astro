@@ -7,7 +7,7 @@ const { data } = Astro.props;
 
 <BaseLayout pageTitle={data.title}>
     <article
-        class="prose prose-img:rounded-md text-justify leading-normal mx-auto"
+        class="prose prose-img:rounded-md prose-img:my-1 text-justify leading-normal mx-auto"
     >
         <h2 class="text-left py-0 px-0 my-1">
             {data.title}
@@ -24,3 +24,10 @@ const { data } = Astro.props;
         <slot />
     </article>
 </BaseLayout>
+
+<style is:global>
+    img + em {
+        @apply flex;
+        @apply justify-center;
+    }
+</style>
