@@ -26,9 +26,15 @@ interface TagProps {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props as TagProps;
+
+const formattedTag = tag
+    ?.toLowerCase()
+    .split(" ")
+    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(" ");
 ---
 
-<BaseLayout pageTitle={tag}>
+<BaseLayout pageTitle={`Tag: ${formattedTag}`}>
     <div class="font-bold">
         Posts tagged with <span class="capitalize">{tag}</span>:
     </div>
