@@ -36,9 +36,9 @@ const formattedTag = tag
 
 <BaseLayout pageTitle={`Tag: ${formattedTag}`}>
     <div class="font-bold">
-        Posts tagged with <span class="capitalize">{tag}</span>:
+        Posts tagged with <span class="capitalize">{tag}</span>
     </div>
-    <ul>
+    <div class="flex flex-col gap-4">
         {
             posts.map((post) => (
                 <PostEntry
@@ -49,5 +49,5 @@ const formattedTag = tag
                 />
             ))
         }
-    </ul>
+    </div>
 </BaseLayout>
