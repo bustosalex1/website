@@ -28,8 +28,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props as TagProps;
 
 const formattedTag = tag
-    ?.toLowerCase()
-    .split(" ")
+    ?.split(" ")
     .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
     .join(" ");
 ---
@@ -42,7 +41,7 @@ const formattedTag = tag
         {
             posts.map((post) => (
                 <PostEntry
-                    url={"/tags/" + post.slug}
+                    url={"/posts/" + post.slug}
                     title={post.data.title}
                     date={post.data.pubDate}
                     tags={post.data.tags}

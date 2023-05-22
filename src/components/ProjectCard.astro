@@ -9,21 +9,21 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<div
-    class="transition ease-in-out card w-full bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 outline outline-1 outline-neutral-400"
->
-    <figure>
-        <Image src={post.data.image} alt={post.data.imageAlt} />
-    </figure>
-    <div class="p-3 card-body">
-        <a href={"/posts/" + post.slug}>
+<a href={"/posts/" + post.slug}>
+    <div
+        class="transition ease-in-out card w-full bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 outline outline-1 outline-neutral-400 h-full"
+    >
+        <figure>
+            <Image src={post.data.image} alt={post.data.imageAlt} />
+        </figure>
+        <div class="p-3 card-body">
             <h2 class="card-title hover:text-primary leading-tight text-lg">
                 {post.data.title}
-            </h2></a
-        >
-        <p>{post.data.description}</p>
-        <div class="card-actions justify-end">
-            <FormattedDate date={post.data.pubDate} />
+            </h2>
+            <p>{post.data.description}</p>
+            <div class="card-actions justify-end">
+                <FormattedDate date={post.data.pubDate} />
+            </div>
         </div>
     </div>
-</div>
+</a>
