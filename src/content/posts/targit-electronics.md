@@ -1,6 +1,6 @@
 ---
 title: 'TARGIT CubeSat Mission Electronics Subsystem'
-pubDate: 2022-07-01
+pubDate: 2019-05-01
 description: 'Electronics subsystem for a small satellite.'
 author: 'Alex Bustos'
 image: '../../assets/targitStructure-01.png'
