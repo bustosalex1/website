@@ -13,6 +13,7 @@ const postCollection = defineCollection({
             image: image(),
             imageAlt: z.string(),
             tags: z.string().array(),
+            project: z.boolean().optional(),
         }),
 })
 

@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+type ImageTuple = [ImageMetadata, string];
+
+interface Props {
+    images: ImageTuple[];
+    caption: string | undefined;
+    rows: string;
+    cols: string;
+}
+
+const { images, caption, rows, cols } = Astro.props;
+---
+
+<div class={`grid ${cols} ${rows} gap-2`}>
+    {images.map(([src, alt]) => <Image src={src} alt={alt} />)}
+</div>
+{caption && <em class="flex justify-center">{caption}</em>}

@@ -5,8 +5,12 @@ import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("posts");
 
-const filteredPosts = allPosts.filter((post) => {
-    return post.data.tags.includes("project");
+let filteredPosts = allPosts.filter((post) => {
+    return post.data.project;
+});
+
+filteredPosts = filteredPosts.sort((post1, post2) => {
+    return post2.data.pubDate.getTime() - post1.data.pubDate.getTime();
 });
 
 const pageTitle = "Projects";
@@ -14,7 +18,7 @@ const pageTitle = "Projects";
 
 <BaseLayout pageTitle={pageTitle}>
     <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2"
     >
         {filteredPosts.map((post) => <ProjectCard post={post} />)}
     </div>

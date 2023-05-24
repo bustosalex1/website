@@ -16,11 +16,9 @@ if (tags.length > 3) {
 }
 ---
 
-<li
-    class="flex flex-col w-full gap-1 rounded-md ring-1 ring-neutral-400 p-2"
->
+<li class="flex flex-col w-full gap-1 rounded-md ring-1 ring-neutral-400 p-2">
     <div class="flex flex-row justify-between items-center">
-        <a href={url} class="hover:text-primary">{title}</a>
+        <a href={url} class="hoverable">{title}</a>
         <div class="text-xs font-mono">
             <FormattedDate date={date} />
         </div>

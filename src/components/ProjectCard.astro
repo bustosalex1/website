@@ -11,16 +11,18 @@ const { post } = Astro.props;
 
 <a href={"/posts/" + post.slug}>
     <div
-        class="transition ease-in-out card w-full bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 ring-1 ring-neutral-400 h-full"
+        class="transition ease-in-out card w-full bg-base-100 shadow-xl hover:shadow-2xl hover:-translate-y-1 duration-300 ring-1 ring-neutral-400 h-full group"
     >
         <figure>
             <Image src={post.data.image} alt={post.data.imageAlt} />
         </figure>
         <div class="p-3 card-body">
-            <h2 class="card-title hover:text-primary leading-tight text-lg">
+            <h2
+                class="leading-tight text-md font-bold group-hover:text-primary transition ease-in-out duration-300"
+            >
                 {post.data.title}
             </h2>
-            <p>{post.data.description}</p>
+            <p class="text-sm">{post.data.description}</p>
             <div class="card-actions justify-end">
                 <FormattedDate date={post.data.pubDate} />
             </div>
