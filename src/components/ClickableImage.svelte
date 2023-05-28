@@ -1,7 +1,7 @@
 <script lang="ts">
     import { cubicInOut } from "svelte/easing";
     import { fade } from "svelte/transition";
-
+    export let caption: string;
     let selected = false;
 
     const toggleModal = () => {
@@ -12,6 +12,7 @@
 <!-- default image -->
 <button on:click={toggleModal} class="cursor-pointer">
     <slot />
+    <em>{caption}</em>
 </button>
 
 {#if selected}
