@@ -20,13 +20,13 @@
 {#if selected}
     <!-- modal container -->
     <button
-        class="fixed top-0 left-0 h-full w-[100vw] bg-black bg-opacity-50 flex items-center justify-center cursor-pointer"
+        class="fixed top-0 left-0 h-[100vh] w-[100vw] bg-black bg-opacity-50 flex items-center justify-center cursor-pointer"
         on:click={toggleModal}
         transition:fade={{ duration: 250, easing: cubicInOut }}
     >
         <!-- modal content -->
         <div
-            class="h-[75vh]"
+            class="min-h-fit h-[75vh] max-h-[75vh] max-w-[75vw]"
             transition:fly={{ duration: 250, y: 50, easing: cubicInOut }}
         >
             <slot />

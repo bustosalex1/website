@@ -7,7 +7,7 @@ const { data } = Astro.props;
 
 <BaseLayout pageTitle={data.title}>
     <article
-        class="prose prose-img:rounded-md prose-img:my-0 prose-img:h-full prose-img:block prose-img:w-auto text-justify leading-normal mx-auto pb-20"
+        class="prose prose-img:rounded-md prose-img:my-0 prose-img:h-auto prose-img:w-auto prose-img:max-w-full prose-img:max-h-full prose-img:object-contain text-justify leading-normal mx-auto pb-20"
     >
         <h2 class="text-left py-0 px-0 my-1">
             {data.title}
