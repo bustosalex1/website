@@ -1,7 +1,7 @@
 <script lang="ts">
     import { cubicInOut } from "svelte/easing";
-    import { fade } from "svelte/transition";
-    export let caption: string;
+    import { fade, fly } from "svelte/transition";
+    export let caption: string | undefined;
     let selected = false;
 
     const toggleModal = () => {
@@ -12,19 +12,23 @@
 <!-- default image -->
 <button on:click={toggleModal} class="cursor-pointer">
     <slot />
-    <em>{caption}</em>
+    {#if caption}
+        <em>{caption}</em>
+    {/if}
 </button>
 
 {#if selected}
     <!-- modal container -->
     <button
-        class="fixed top-0 left-0 h-[100vh] w-[100vw] bg-black bg-opacity-50 flex items-center justify-center cursor-pointer"
+        class="fixed top-0 left-0 h-full w-[100vw] bg-black bg-opacity-50 flex items-center justify-center cursor-pointer"
         on:click={toggleModal}
-        in:fade={{ duration: 250, easing: cubicInOut }}
-        out:fade={{ duration: 250, easing: cubicInOut }}
+        transition:fade={{ duration: 250, easing: cubicInOut }}
     >
         <!-- modal content -->
-        <div class="max-w-[75%]">
+        <div
+            class="h-[75vh]"
+            transition:fly={{ duration: 250, y: 50, easing: cubicInOut }}
+        >
             <slot />
         </div>
     </button>
