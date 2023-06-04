@@ -1,4 +1,4 @@
-# My Website
+# Alex's Website
 
 My website, made mostly with Astro, Svelte, TailwindCSS, and DaisyUI. I feel like the `package.json` contains all the relevant commands.
 
