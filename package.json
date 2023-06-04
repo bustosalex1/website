@@ -1,11 +1,12 @@
 {
     "name": "website",
     "type": "module",
-    "version": "0.0.1",
+    "version": "0.1",
     "scripts": {
+        "stamp": "echo \"COMMIT_HASH=$(git rev-parse --short HEAD)\"> .env && echo \"VERSION=$(node -p \"require('./package.json').version\")\">>.env",
         "dev": "astro dev",
         "start": "astro dev",
-        "build": "astro build",
+        "build": "npm run stamp && astro build",
         "preview": "astro preview",
         "astro": "astro"
     },
