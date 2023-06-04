@@ -10,6 +10,7 @@ interface Props {
 }
 
 let { url, title, date, tags } = Astro.props;
+tags = tags.sort();
 
 if (tags.length > 3) {
     tags = tags.slice(0, 3);

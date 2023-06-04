@@ -6,7 +6,7 @@ author: 'Alex Bustos'
 image: '../../assets/posts/carabiner/toolpaths.webp'
 imageAlt: 'Demo image.'
 project: true
-tags: ['3D printing', 'CAD']
+tags: ['machining', 'CAD', 'CAM']
 ---
 
 ![a machined aluminum carabiner](../../assets/posts/carabiner/finished-carabiner.webp)
