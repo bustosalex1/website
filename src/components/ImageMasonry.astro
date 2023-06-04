@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import ClickableImage from "./ClickableImage.svelte";
+
+type ImageTuple = [ImageMetadata, string];
+
+interface Props {
+    images: ImageTuple[][];
+    caption: string | undefined;
+    clickable: boolean | undefined;
+    cols: string;
+}
+
+const { images, caption, clickable, cols } = Astro.props;
+---
+
+<div class={`grid ${cols} gap-2`}>
+    {
+        images.map((imageColumn: ImageTuple[]) => (
+            <div class="flex flex-col gap-2 align-top">
+                {imageColumn.map(([src, alt]) =>
+                    clickable ? (
+                        <ClickableImage caption={undefined} client:load>
+                            <Image
+                                src={src}
+                                alt={alt}
+                                class="h-auto max-w-full"
+                            />
+                        </ClickableImage>
+                    ) : (
+                        <div class="h-auto max-w-full">
+                            <Image
+                                src={src}
+                                alt={alt}
+                                class="h-auto max-w-full"
+                            />
+                        </div>
+                    )
+                )}
+            </div>
+        ))
+    }
+</div>
+{caption && <em class="flex justify-center">{caption}</em>}

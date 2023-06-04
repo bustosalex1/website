@@ -9,6 +9,7 @@ project: true
 tags: ['sauce', 'horticulture']
 ---
 import ImageGrid from '../../components/ImageGrid.astro'
+import ImageMasonry from '../../components/ImageMasonry.astro'
 import boxPanels from '../../assets/posts/hot-sauce/box-panels.webp'
 import crowbar from '../../assets/posts/hot-sauce/crowbar.webp'
 import labelDesign from '../../assets/posts/hot-sauce/label-design.webp'
@@ -24,10 +25,10 @@ _Habanero pepper plant._
 
 Sometime after our first batch, we made a trip to the DeKalb Farmer's Market and picked up some ghost peppers. We settled on a ghost pepper & mango recipe and set about making Version 2 of the hot sauce. I think it came out great, and a lot of our friends really enjoyed it. Unfortunately I didn't take too many pictures of the new sauce, but I have some images of the labels. I also had the idea to make laser cut balsa wood crates as packaging. With the help of a friend I machined a small aluminum crowbar for opening the crate. I'm sure if we ever get the chance we'll make some more sauce.
 
-<ImageGrid
-    images={[[boxPanels, "laser cut balsa wood box panels"], [boxRender, "3D render of a small wooden box design"], [crowbar, "a small aluminum crowbar"], [labelDesign, "label design for a hot sauce bottle"]]}
+<ImageMasonry
+    images={[[[boxPanels, "laser cut balsa wood box panels"], [boxRender, "3D render of a small wooden box design"]], [[crowbar, "a small aluminum crowbar"], [labelDesign, "label design for a hot sauce bottle"]]]}
     caption="Fahrenheit 406 V2 design, packaging, and accessories."
-    rows="grid-rows-2"
     cols="grid-cols-2"
     clickable
 />
+
