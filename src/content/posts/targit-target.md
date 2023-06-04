@@ -1,10 +1,10 @@
 ---
 title: 'TARGIT CubeSat Target Subsystem'
 pubDate: 2020-05-05
-description: 'A small-ish, fast-ish 3D printer.'
+description: 'A CubeSat subsystem.'
 author: 'Alex Bustos'
-image: '../../assets/demo_image.jpeg'
-imageAlt: 'Demo image.'
+image: '../../assets/posts/targit-target/space-render.webp'
+imageAlt: 'A 3D render of a small satellite in space.'
 project: true
 tags: ['3D printing', 'CAD', 'Research']
 ---

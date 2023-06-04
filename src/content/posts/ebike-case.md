@@ -3,8 +3,8 @@ title: '3D Printed E-Bike Controller Case'
 pubDate: 2020-05-30
 description: 'A small-ish, fast-ish 3D printer.'
 author: 'Alex Bustos'
-image: '../../assets/demo_image.jpeg'
-imageAlt: 'Demo image.'
+image: '../../assets/posts/ebike-case/installed-case.webp'
+imageAlt: 'a picture of an e-bike with a 3D printed controller case'
 project: true
 tags: ['3D printing', 'CAD']
 ---
