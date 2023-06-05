@@ -17,15 +17,13 @@
     on:mouseenter={() => (hovered = true)}
     on:mouseleave={() => (hovered = false)}
 >
-    {#if hovered}
-        {#if caption}
-            <div
-                class="absolute bottom-0 left-0 h-auto w-full bg-black bg-opacity-70 p-2 rounded-b-md text-white flex justify-start items-center text-left"
-                transition:fly={{ y: 50, duration: 250, easing: cubicInOut }}
-            >
-                {caption}
-            </div>
-        {/if}
+    {#if hovered && caption}
+        <div
+            class="absolute bottom-0 left-0 h-auto w-full bg-black bg-opacity-70 p-2 rounded-b-md text-white flex justify-start items-center text-left"
+            transition:fly={{ y: 50, duration: 250, easing: cubicInOut }}
+        >
+            {caption}
+        </div>
     {/if}
 
     <slot />
