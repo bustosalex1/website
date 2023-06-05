@@ -20,7 +20,7 @@ const { images, caption, clickable, cols } = Astro.props;
             <div class="flex flex-col gap-2 align-top">
                 {imageColumn.map(([src, alt]) =>
                     clickable ? (
-                        <ClickableImage caption={undefined} client:load>
+                        <ClickableImage caption={alt} client:load>
                             <Image
                                 src={src}
                                 alt={alt}
