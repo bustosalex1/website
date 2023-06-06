@@ -1,8 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import ClickableImage from "./ClickableImage.svelte";
-
-type ImageTuple = [ImageMetadata, string, string?];
+import type { ImageTuple } from "@types";
+import ClickableImage from "@components/ClickableImage.svelte";
 
 interface Props {
     images: ImageTuple[];
