@@ -2,24 +2,29 @@
 import { Image } from "astro:assets";
 import ClickableImage from "./ClickableImage.svelte";
 
-type ImageTuple = [ImageMetadata, string];
+type ImageTuple = [ImageMetadata, string, string?];
 
 interface Props {
     images: ImageTuple[];
     caption: string | undefined;
     clickable: boolean | undefined;
+    captionMode: "hover" | "below" | undefined;
     rows: string;
     cols: string;
 }
 
-const { images, caption, clickable, rows, cols } = Astro.props;
+const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
 ---
 
 <div class={`grid ${cols} ${rows} gap-2`}>
     {
-        images.map(([src, alt]) =>
+        images.map(([src, alt, caption]) =>
             clickable ? (
-                <ClickableImage caption={undefined} client:load>
+                <ClickableImage
+                    caption={caption}
+                    captionMode={captionMode}
+                    client:load
+                >
                     <Image src={src} alt={alt} />
                 </ClickableImage>
             ) : (
