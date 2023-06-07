@@ -5,6 +5,7 @@
     // props
     export let caption: string | undefined;
     export let captionMode: "hover" | "below" | undefined;
+    export let imgSrc: string | undefined;
 
     // flag to set when the modal is clicked
     let selected = false;
@@ -51,7 +52,13 @@
             class="min-h-fit h-[75vh] max-h-[75vh] max-w-[75vw]"
             transition:fly={{ duration: 250, y: 50, easing: cubicInOut }}
         >
-            <slot />
+            {#if imgSrc}
+                <img
+                    src={imgSrc}
+                    alt={caption}
+                    class="w-auto h-auto max-h-full object-contain"
+                />
+            {/if}
             {#if caption}
                 <em class="text-white">{caption}</em>
             {/if}

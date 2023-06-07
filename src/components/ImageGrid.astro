@@ -22,6 +22,7 @@ const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
                 <ClickableImage
                     caption={caption}
                     captionMode={captionMode}
+                    imgSrc={src.src}
                     client:load
                 >
                     <Image src={src} alt={alt} />
