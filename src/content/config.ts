@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content'
+import { defineCollection, z } from "astro:content";
 
 const postCollection = defineCollection({
     schema: ({ image }) =>
@@ -15,8 +15,8 @@ const postCollection = defineCollection({
             tags: z.string().array(),
             project: z.boolean().optional(),
         }),
-})
+});
 
 export const collections = {
     posts: postCollection,
-}
+};

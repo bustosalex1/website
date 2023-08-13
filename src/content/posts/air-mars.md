@@ -1,12 +1,12 @@
 ---
-title: 'Air Mars Engineering Graphics Project'
+title: "Air Mars Engineering Graphics Project"
 pubDate: 2018-04-12
-description: 'A CAD project for school.'
-author: 'Alex Bustos'
-image: '../../assets/posts/air-mars/render.webp'
-imageAlt: 'Demo image.'
+description: "A CAD project for school."
+author: "Alex Bustos"
+image: "../../assets/posts/air-mars/render.webp"
+imageAlt: "Demo image."
 project: true
-tags: ['CAD', 'School']
+tags: ["CAD", "School"]
 ---
 
 ![Final drone assembly render](../../assets/posts/air-mars/render.webp)

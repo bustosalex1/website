@@ -1,4 +1,4 @@
 export const modes = {
-    light: 'bumblebee',
-    dark: 'dracula',
-}
+    light: "bumblebee",
+    dark: "dracula",
+};

@@ -1,18 +1,19 @@
 ---
-title: 'TARGIT CubeSat Mission Electronics Subsystem'
+title: "TARGIT CubeSat Mission Electronics Subsystem"
 pubDate: 2019-05-01
-description: 'A sub-subsystem for a CubeSat.'
-author: 'Alex Bustos'
-image: '../../assets/posts/targit-electronics/board-render.webp'
-imageAlt: 'Demo image.'
-tags: ['PCB design', 'electronics', 'research']
+description: "A sub-subsystem for a CubeSat."
+author: "Alex Bustos"
+image: "../../assets/posts/targit-electronics/board-render.webp"
+imageAlt: "Demo image."
+tags: ["PCB design", "electronics", "research"]
 project: true
 ---
-import ImageGrid from '../../components/ImageGrid.astro'
-import milledBoard from "../../assets/posts/targit-electronics/milled-board.webp"
-import proBoard from "../../assets/posts/targit-electronics/oshpark-board.webp"
-import stack from "../../assets/posts/targit-electronics/tinyduino-to-scale.webp"
-import comparison from "../../assets/posts/targit-electronics/board-comparison.webp"
+
+import ImageGrid from "../../components/ImageGrid.astro";
+import milledBoard from "../../assets/posts/targit-electronics/milled-board.webp";
+import proBoard from "../../assets/posts/targit-electronics/oshpark-board.webp";
+import stack from "../../assets/posts/targit-electronics/tinyduino-to-scale.webp";
+import comparison from "../../assets/posts/targit-electronics/board-comparison.webp";
 
 ![a 3D rendered image of a small PCB.](../../assets/posts/targit-electronics/board-render.webp)
 _Motherboard PCB render._
@@ -27,7 +28,24 @@ _High level electronics schematic._
 Over the course of two semesters, I learned how to use Autodesk EAGLE to design circuits and PCBs. I used on-campus resources, like the Mechanical Engineering Electronics Lab, to get single sided PCBs milled to prototype with. After validating my design, I moved on to a more compact two-sided design that was professionally manufactured via OSHPark. I sourced all the components for the board via DigiKey and assembled the board using a soldering iron. You can see the progression from prototype to completed board in the images below.
 
 <ImageGrid
-    images={[[milledBoard, "a single sided PCB milled from a copper clad board.", "Single-sided milled prototype board."], [proBoard, "a PCB manufactured by OSHPark.", "Professionally manufactured board."], [stack, "a stack of TinyZero shields.", "TinyDuino stack."], [comparison, "A side by side view of the prototype board with the completed board.", "Completed prototype board alongside completed professional board."]]}
+    images={[
+        [
+            milledBoard,
+            "a single sided PCB milled from a copper clad board.",
+            "Single-sided milled prototype board.",
+        ],
+        [
+            proBoard,
+            "a PCB manufactured by OSHPark.",
+            "Professionally manufactured board.",
+        ],
+        [stack, "a stack of TinyZero shields.", "TinyDuino stack."],
+        [
+            comparison,
+            "A side by side view of the prototype board with the completed board.",
+            "Completed prototype board alongside completed professional board.",
+        ],
+    ]}
     caption="Progression of board through development cycle."
     rows="grid-rows-2"
     cols="grid-cols-2"
