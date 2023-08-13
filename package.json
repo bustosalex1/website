@@ -6,23 +6,23 @@
         "stamp": "echo \"COMMIT_HASH=$(git rev-parse --short HEAD)\"> .env && echo \"VERSION=$(node -p \"require('./package.json').version\")\">>.env",
         "dev": "astro dev",
         "start": "astro dev",
-        "build": "npm run stamp && astro build",
+        "build": "pnpm run stamp && astro build",
         "preview": "astro preview",
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/mdx": "^0.19.2",
-        "@astrojs/svelte": "^2.1.1",
-        "@astrojs/tailwind": "^3.1.2",
-        "@astrojs/ts-plugin": "^1.0.4",
-        "astro": "^2.4.4",
-        "daisyui": "^2.51.6",
-        "svelte": "^3.59.1",
-        "tailwindcss": "^3.3.2",
+        "@astrojs/mdx": "^0.19.7",
+        "@astrojs/svelte": "^3.1.0",
+        "@astrojs/tailwind": "^4.0.0",
+        "@astrojs/ts-plugin": "^1.1.1",
+        "astro": "^2.10.7",
+        "daisyui": "^3.5.1",
+        "svelte": "^4.2.0",
+        "tailwindcss": "^3.3.3",
         "theme-change": "^2.5.0"
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.9",
-        "autoprefixer": "^10.4.14"
+        "autoprefixer": "^10.4.15"
     }
 }
