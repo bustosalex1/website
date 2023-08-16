@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import ClickableImage from "@components/ClickableImage.svelte";
 import type { ImageTuple } from "@types";
 
+// provide types for props
 interface Props {
     images: ImageTuple[][];
     caption: string | undefined;
@@ -11,6 +12,7 @@ interface Props {
     cols: string;
 }
 
+// destructure props
 const { images, caption, captionMode, clickable, cols } = Astro.props;
 ---
 

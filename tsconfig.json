@@ -3,8 +3,15 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@components/*": ["src/components/*"],
-            "@types": ["src/types/"]
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@types": [
+                "src/types/"
+            ],
+            "@layouts/*": [
+                "src/layouts/*"
+            ]
         },
         "plugins": [
             {

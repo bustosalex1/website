@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import type { ImageTuple } from "@types";
 import ClickableImage from "@components/ClickableImage.svelte";
 
+// provide types for props
 interface Props {
     images: ImageTuple[];
     caption: string | undefined;
@@ -14,7 +15,6 @@ interface Props {
 
 const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
 ---
-
 <div class={`grid ${cols} ${rows} gap-2`}>
     {
         images.map(([src, alt, caption]) =>

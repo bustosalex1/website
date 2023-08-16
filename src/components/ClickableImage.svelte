@@ -19,6 +19,13 @@
     };
 </script>
 
+<!-- @component
+ClickableImage provides an image component that can be clicked to show a larger modal of the same
+image. The component also shows a caption, which can be passed in using the `caption` prop, when a
+user hovers over the image if `captionMode` is set to `hover`. Alternatively, `captionMode` can be
+set to `below` to permanently display the caption below the image.
+-->
+
 <!-- default image -->
 <button
     on:click={toggleModal}
