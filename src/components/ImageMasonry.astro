@@ -1,4 +1,10 @@
 ---
+/**
+ * A layout of images with optionally different aspect ratios. This is similar to `ImageGrid.astro`,
+ * the main difference is that images in `ImageMasonry.astro` will not be justified to match the
+ * aspect ratios of the other images in the layout. Images can be `ClickableImage` components, or
+ * just regular images. This option is specified using the `clickable` boolean prop.
+ */
 import { Image } from "astro:assets";
 import ClickableImage from "@components/ClickableImage.svelte";
 import type { ImageTuple } from "@types";
