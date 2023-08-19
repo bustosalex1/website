@@ -2,10 +2,20 @@
     import { cubicInOut } from "svelte/easing";
     import { fade, fly } from "svelte/transition";
 
-    // props
+    /** the caption to display below the image. Also used as the image's alt tag */
     export let caption: string | undefined;
+
+    /** 
+     * how the caption should be displayed. `hover` will display the caption whenever a user hovers
+     * over the image. `below` will permanently display the caption below the image.
+     */
     export let captionMode: "hover" | "below" | undefined;
+
+    /** the source for the image to display */
     export let imgSrc: string | undefined;
+
+    /** whether or not to display the image in a new tab, instead of in a modal */
+    export let newTab: true | undefined;
 
     // flag to set when the modal is clicked
     let selected = false;
@@ -15,7 +25,11 @@
 
     // callback whenever you click on the image
     const toggleModal = () => {
-        selected = !selected;
+        if (newTab) {
+            window.open(imgSrc, '_blank')
+        } else {
+            selected = !selected
+        }
     };
 </script>
 
@@ -47,7 +61,7 @@ set to `below` to permanently display the caption below the image.
     {/if}
 </button>
 
-{#if selected}
+{#if selected && !newTab}
     <!-- modal container -->
     <button
         class="fixed top-0 left-0 h-[100vh] w-[100vw] bg-black bg-opacity-70 flex items-center justify-center cursor-pointer z-50"

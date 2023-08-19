@@ -4,7 +4,7 @@ pubDate: 2018-04-12
 description: "A CAD project for school."
 author: "Alex Bustos"
 image: "../../assets/posts/air-mars/render.webp"
-imageAlt: "Demo image."
+imageAlt: "A picture of a fixed wing drone on Mars."
 project: true
 tags: ["CAD", "School"]
 ---
