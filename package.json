@@ -6,7 +6,7 @@
         "stamp": "echo \"COMMIT_HASH=$(git rev-parse --short HEAD)\"> .env && echo \"VERSION=$(node -p \"require('./package.json').version\")\">>.env",
         "dev": "astro dev",
         "start": "astro dev",
-        "build": "pnpm run stamp && astro build",
+        "build": "pnpm stamp && astro build",
         "preview": "astro preview",
         "astro": "astro"
     },

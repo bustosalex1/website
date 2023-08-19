@@ -10,4 +10,5 @@ export default defineConfig({
     experimental: {
         assets: true,
     },
+    site: "https://bustosalex1.github.io",
 });

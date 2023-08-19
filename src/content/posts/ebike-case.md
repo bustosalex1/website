@@ -17,7 +17,7 @@ Recently I purchased a kit to turn my regular bike into an electric bike. It cam
 ![a picture of an e-bike without a 3D printed controller case](../../assets/posts/ebike-case/old-bike.webp)
 _Bike prior to 3D printed case._
 
-This project ended up being the perfect test of my recently upgraded CoreXY 3D Printer. Up until this point, I had only ever printed relatively small parts. I was happy to see that all of the case parts (each taking around 8-10 hours to print) printed successfully. I think the final product came out pretty well, and I really like the overall look of the bike.
+This project ended up being a great test of my recently upgraded CoreXY 3D Printer. Up until this point, I had only ever printed relatively small parts. I was happy to see that all of the case parts (each taking around 8-10 hours to print) printed successfully. I think the final product came out pretty well, and I really like the overall look of the bike.
 
 ![an exploded view of a 3D printed e-bike controller case](../../assets/posts/ebike-case/exploded-case-render.webp)
 _Exploded case assembly._
