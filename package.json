@@ -8,7 +8,8 @@
         "start": "astro dev",
         "build": "pnpm stamp && astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "format": "prettier . --write"
     },
     "dependencies": {
         "@astrojs/mdx": "^1.0.3",
