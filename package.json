@@ -1,30 +1,37 @@
 {
     "name": "website",
     "type": "module",
-    "version": "0.1",
+    "version": "0.2",
     "scripts": {
         "stamp": "echo \"COMMIT_HASH=$(git rev-parse --short HEAD)\"> .env && echo \"VERSION=$(node -p \"require('./package.json').version\")\">>.env",
         "dev": "astro dev",
         "start": "astro dev",
         "build": "pnpm stamp && astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "format": "prettier . --write --plugin=prettier-plugin-astro"
     },
     "dependencies": {
-        "@astrojs/mdx": "^0.19.7",
-        "@astrojs/svelte": "^3.1.0",
-        "@astrojs/tailwind": "^4.0.0",
-        "@astrojs/ts-plugin": "^1.1.1",
-        "astro": "^2.10.7",
-        "daisyui": "^3.5.1",
+        "@astrojs/mdx": "^1.1.0",
+        "@astrojs/svelte": "^4.0.2",
+        "@astrojs/tailwind": "^5.0.0",
+        "@astrojs/ts-plugin": "^1.1.3",
+        "astro": "^3.1.0",
+        "daisyui": "^3.7.4",
         "svelte": "^4.2.0",
         "tailwindcss": "^3.3.3",
         "theme-change": "^2.5.0"
     },
     "devDependencies": {
-        "@tailwindcss/typography": "^0.5.9",
+        "@iconify-json/line-md": "^1.1.29",
+        "@iconify/tailwind": "^0.1.3",
+        "@tailwindcss/typography": "^0.5.10",
         "autoprefixer": "^10.4.15",
-        "prettier": "^3.0.1",
-        "prettier-plugin-astro": "^0.11.0"
+        "postcss": "^8.4.29",
+        "prettier": "^3.0.3",
+        "prettier-plugin-astro": "^0.12.0",
+        "sharp": "^0.32.5",
+        "typescript": "^5.2.2",
+        "vite": "^4.4.9"
     }
 }

@@ -1,10 +1,8 @@
 name: Deploy to GitHub Pages
 
 on:
-    # Trigger the workflow every time you push to the `main` branch
-    # Using a different branch name? Replace `main` with your branch’s name
+    # Trigger the workflow every time you push
     push:
-        branches: [main]
     # Allows you to run this workflow manually from the Actions tab on GitHub.
     workflow_dispatch:
 
@@ -21,12 +19,14 @@ jobs:
             - name: Checkout your repository using git
               uses: actions/checkout@v3
             - name: Install, build, and upload your site
-              uses: withastro/action@v0.2.0
+              uses: withastro/action@v0.3.0
               with:
                   package-manager: pnpm # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+                  pnpm-version: 8.7.5
 
     deploy:
         needs: build
+        if: github.ref == 'ref/heads/main'
         runs-on: ubuntu-latest
         environment:
             name: github-pages
@@ -34,4 +34,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v1
+              uses: actions/deploy-pages@v2
