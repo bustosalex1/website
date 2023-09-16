@@ -11,7 +11,7 @@ import { modes } from "../styles/modes";
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en" data-theme={modes.light}>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
@@ -23,6 +23,11 @@ const { pageTitle } = Astro.props;
             const theme = localStorage.getItem("theme");
             if (theme !== null) {
                 document.documentElement.setAttribute("data-theme", theme);
+            } else {
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    modes.light,
+                );
             }
             // "theme" LocalStorage value is set by the package to remember user preference.
             // The value is checked and applyed before rendering anything.

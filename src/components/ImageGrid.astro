@@ -21,6 +21,7 @@ interface Props {
 
 const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
 ---
+
 <div class={`grid ${cols} ${rows} gap-2`}>
     {
         images.map(([src, alt, caption]) =>
@@ -35,7 +36,7 @@ const { images, caption, clickable, captionMode, rows, cols } = Astro.props;
                 </ClickableImage>
             ) : (
                 <Image src={src} alt={alt} />
-            )
+            ),
         )
     }
 </div>

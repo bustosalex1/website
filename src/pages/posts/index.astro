@@ -5,10 +5,7 @@ import { getCollection } from "astro:content";
 const allPosts = await getCollection("posts");
 
 let filteredPosts = allPosts.sort((post1, post2) => {
-    return (
-        post2.data.pubDate.getTime() -
-        post1.data.pubDate.getTime()
-    );
+    return post2.data.pubDate.getTime() - post1.data.pubDate.getTime();
 });
 
 const pageTitle = "Posts";
@@ -26,5 +23,5 @@ const pageTitle = "Posts";
                 />
             ))
         }
-    </ul>
+    </div>
 </BaseLayout>
