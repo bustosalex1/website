@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import NoteLayout from "@layouts/NoteLayout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+const allNotes = await getCollection("notes");
+
+const classes = new Map<string, CollectionEntry<"notes">[]>();
+
+allNotes.forEach((note) => {
+    if (classes.has(note.data.class)) {
+        classes.get(note.data.class)?.push(note);
+    } else {
+        classes.set(note.data.class, [note]);
+    }
+});
+
+const pageTitle = "Notes";
+---
+
+<NoteLayout pageTitle={pageTitle}>
+    <div class="flex flex-col gap-4">
+        {
+            Array.from(classes).map(([key, value]) => (
+                <div>
+                    <b>{key}</b>
+                    {value.map((value) => (
+                        <div>{value.data.title}</div>
+                    ))}
+                </div>
+            ))
+        }
+    </div>
+</NoteLayout>

@@ -1,0 +1,24 @@
+---
+/**
+ * Component providing links to main pages on my website. New links and their slugs can be added in
+ * the `links` variable. This component also displays the title of the website (my name) and the
+ * theme toggle.
+ */
+import ThemeToggle from "@components/ThemeToggle.astro";
+let currentPage = Astro.url.pathname;
+
+const links = [
+    ["Projects", "/"],
+    ["Posts", "/posts/"],
+    ["Notes", "/notes/"],
+];
+---
+
+<details class="collapse">
+    <summary class="collapse-title text-xl font-medium"
+        >Kalman Filtering</summary
+    >
+    <div class="collapse-content">
+        <p>Note 1</p>
+    </div>
+</details>

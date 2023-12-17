@@ -22,6 +22,7 @@ const noteCollection = defineCollection({
         z.object({
             title: z.string(),
             author: z.string(),
+            class: z.string(),
             pubDate: z
                 .string()
                 .or(z.date())
