@@ -17,6 +17,19 @@ const postCollection = defineCollection({
         }),
 });
 
+const noteCollection = defineCollection({
+    schema: () =>
+        z.object({
+            title: z.string(),
+            author: z.string(),
+            pubDate: z
+                .string()
+                .or(z.date())
+                .transform((val) => new Date(val)),
+        }),
+});
+
 export const collections = {
     posts: postCollection,
+    notes: noteCollection,
 };
