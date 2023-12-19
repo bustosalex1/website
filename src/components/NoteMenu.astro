@@ -4,21 +4,56 @@
  * the `links` variable. This component also displays the title of the website (my name) and the
  * theme toggle.
  */
-import ThemeToggle from "@components/ThemeToggle.astro";
-let currentPage = Astro.url.pathname;
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+const allNotes = await getCollection("notes");
 
-const links = [
-    ["Projects", "/"],
-    ["Posts", "/posts/"],
-    ["Notes", "/notes/"],
-];
+const classes = new Map<string, CollectionEntry<"notes">[]>();
+
+allNotes.forEach((note) => {
+    if (classes.has(note.data.class)) {
+        classes.get(note.data.class)?.push(note);
+    } else {
+        classes.set(note.data.class, [note]);
+    }
+});
 ---
 
-<details class="collapse">
-    <summary class="collapse-title text-xl font-medium"
-        >Kalman Filtering</summary
-    >
-    <div class="collapse-content">
-        <p>Note 1</p>
+<div class="drawer lg:drawer-open">
+    <input id="notes-drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+        <!-- Page content here -->
+        <BaseLayout>
+            <label
+                for="notes-drawer"
+                class="btn btn-primary drawer-button lg:hidden"
+                >Open drawer</label
+            >
+            <slot />
+        </BaseLayout>
     </div>
-</details>
+    <div class="drawer-side">
+        <label
+            for="my-drawer-2"
+            aria-label="close sidebar"
+            class="drawer-overlay"></label>
+        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+            <!-- Sidebar content here -->
+            <h1 class="font-bold text-lg">Alex's Notes</h1>
+            {
+                Array.from(classes).map(([cls, notes]) => (
+                    <li>
+                        <a>{cls}</a>
+                        <ul>
+                            {notes.map((note) => (
+                                <li>
+                                    <a>{note.data.title}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</div>

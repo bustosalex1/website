@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import NoteLayout from "@layouts/NoteLayout.astro";
+import NoteMenu from "@components/NoteMenu.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 const allNotes = await getCollection("notes");
 
@@ -17,17 +18,4 @@ allNotes.forEach((note) => {
 const pageTitle = "Notes";
 ---
 
-<NoteLayout pageTitle={pageTitle}>
-    <div class="flex flex-col gap-4">
-        {
-            Array.from(classes).map(([key, value]) => (
-                <div>
-                    <b>{key}</b>
-                    {value.map((value) => (
-                        <div>{value.data.title}</div>
-                    ))}
-                </div>
-            ))
-        }
-    </div>
-</NoteLayout>
+<NoteMenu />
