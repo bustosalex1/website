@@ -8,4 +8,15 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
     integrations: [svelte(), tailwind(), mdx()],
     site: "https://bustosalex1.github.io",
+    markdown: {
+        remarkPlugins: ["remark-math"],
+        rehypePlugins: [
+            [
+                "rehype-katex",
+                {
+                    // katex plugin options
+                },
+            ],
+        ],
+    },
 });
