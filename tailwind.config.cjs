@@ -12,6 +12,6 @@ module.exports = {
         addDynamicIconSelectors(),
     ],
     daisyui: {
-        themes: ["bumblebee", "dracula"],
+        themes: ["bumblebee", "sunset"],
     },
 };

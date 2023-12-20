@@ -21,6 +21,9 @@ const { data } = Astro.props;
                     <FormattedDate date={data.pubDate} posted />
                 </div>
                 <div class="divider divider-horizontal mx-2"></div>
+                <div class="text-sm">
+                    {data.class}
+                </div>
             </div>
             <slot />
         </article>
