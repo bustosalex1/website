@@ -15,7 +15,22 @@ const links = [
 ---
 
 <div class="flex flex-row space-x-5 w-full">
-    <a href="/" class="font-bold whitespace-nowrap">Alex Bustos</a>
+    <!-- only render "Alex Bustos" when we're not on the notes page-->
+    {
+        currentPage.includes("notes") ? (
+            <div class="flex items-center">
+                <label
+                    for="notes-drawer"
+                    class="btn btn-xs drawer-button icon-[line-md--menu] w-5 h-5 lg:hidden hover:bg-primary"
+                />
+            </div>
+        ) : (
+            <a href="/" class="font-bold whitespace-nowrap">
+                Alex Bustos
+            </a>
+        )
+    }
+
     {
         links.map(([title, link]) => {
             return (
@@ -32,6 +47,7 @@ const links = [
             );
         })
     }
+    <!--this div is to space the ThemeToggle at the opposite end of the flex box-->
     <div class="flex-grow"></div>
     <div class="flex items-center">
         <ThemeToggle />
