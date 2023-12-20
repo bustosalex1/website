@@ -10,3 +10,7 @@
         @apply duration-300;
     }
 }
+
+.katex-display {
+    overflow: auto hidden;
+}
