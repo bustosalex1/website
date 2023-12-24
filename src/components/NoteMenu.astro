@@ -1,14 +1,14 @@
 ---
 /**
- * Component providing links to main pages on my website. New links and their slugs can be added in
- * the `links` variable. This component also displays the title of the website (my name) and the
- * theme toggle.
+ * Component for the "Notes" section of my website that provides links to all of the pages in the
+ * "Notes" content collection. Also responsive -- it will display on the left side on larger screens
+ * and be hidden on smaller screens like phones. On these screens there's a button on the nav bar
+ * that can be used to access the notes menu. Which... maybe that's like bad in terms of coupling.
  */
 import { getCollection, type CollectionEntry } from "astro:content";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import NoteLayout from "@layouts/NoteLayout.astro";
 const allNotes = await getCollection("notes");
 
+// organize notes according to class
 const classes = new Map<string, CollectionEntry<"notes">[]>();
 
 allNotes.forEach((note) => {
@@ -23,7 +23,7 @@ allNotes.forEach((note) => {
 <div class="drawer lg:drawer-open">
     <input id="notes-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
-        <!-- Page content here -->
+        <!-- page content here -->
         <slot />
     </div>
     <div class="drawer-side">
@@ -32,12 +32,12 @@ allNotes.forEach((note) => {
             aria-label="close sidebar"
             class="drawer-overlay"></label>
         <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-            <!-- Sidebar content here -->
+            <!-- sidebar content here -->
             <h1 class="font-bold text-lg">Alex's Notes</h1>
             {
                 Array.from(classes).map(([cls, notes]) => (
                     <li>
-                        <a>{cls}</a>
+                        <div class="btn-disabled">{cls}</div>
                         <ul>
                             {notes.map((note) => (
                                 <li>

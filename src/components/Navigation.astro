@@ -9,23 +9,21 @@ let currentPage = Astro.url.pathname;
 
 const links = [
     ["Projects", "/"],
-    ["Posts", "/posts/"],
+    // ["Posts", "/posts/"],
     ["Notes", "/notes/"],
 ];
 ---
 
-<div class="flex flex-row space-x-5 w-full">
-    <!-- only render "Alex Bustos" when we're not on the notes page-->
+<div class="flex flex-row w-full items-center">
+    <!-- only render "Alex Bustos" when we're not on the notes page -->
     {
         currentPage.includes("notes") ? (
-            <div class="flex items-center">
-                <label
-                    for="notes-drawer"
-                    class="btn btn-xs drawer-button icon-[line-md--menu] w-5 h-5 lg:hidden hover:bg-primary"
-                />
-            </div>
+            <label
+                for="notes-drawer"
+                class="btn btn-xs drawer-button icon-[line-md--menu] w-5 h-5 hover:bg-primary lg:hidden flex-shrink-0 mr-5"
+            />
         ) : (
-            <a href="/" class="font-bold whitespace-nowrap">
+            <a href="/" class="font-bold whitespace-nowrap pr-5">
                 Alex Bustos
             </a>
         )
@@ -36,7 +34,7 @@ const links = [
             return (
                 <a
                     href={link}
-                    class="hoverable"
+                    class="hoverable pr-5"
                     class:list={[
                         { underline: currentPage === link },
                         { "text-primary": currentPage === link },
@@ -47,7 +45,7 @@ const links = [
             );
         })
     }
-    <!--this div is to space the ThemeToggle at the opposite end of the flex box-->
+    <!-- this div is to space the ThemeToggle to be at the opposite end of the flex box -->
     <div class="flex-grow"></div>
     <div class="flex items-center">
         <ThemeToggle />
