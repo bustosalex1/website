@@ -17,4 +17,13 @@ allNotes.forEach((note) => {
 const pageTitle = "Notes";
 ---
 
-<NoteMenu />
+<NoteMenu>
+    <BaseLayout pageTitle={pageTitle}>
+        <article
+            class="prose text-justify leading-snug mx-auto pb-20 prose-h3:m-0 w-full max-w-none"
+        >
+            <h2 class="text-left py-0 px-0 my-1">Notes</h2>
+            <p>Just some notes.</p>
+        </article>
+    </BaseLayout>
+</NoteMenu>

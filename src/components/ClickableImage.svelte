@@ -5,7 +5,7 @@
     /** the caption to display below the image. Also used as the image's alt tag */
     export let caption: string | undefined;
 
-    /** 
+    /**
      * how the caption should be displayed. `hover` will display the caption whenever a user hovers
      * over the image. `below` will permanently display the caption below the image.
      */
@@ -26,9 +26,9 @@
     // callback whenever you click on the image
     const toggleModal = () => {
         if (newTab) {
-            window.open(imgSrc, '_blank')
+            window.open(imgSrc, "_blank");
         } else {
-            selected = !selected
+            selected = !selected;
         }
     };
 </script>
