@@ -190,7 +190,7 @@ A &= \begin{bmatrix}
     1 & 1 \\
     1 & -1
 \end{bmatrix} \\
-det(A) &\neq 0 \\
+\det{A} &\neq 0 \\
 &\therefore \text{A has rank 2.}
 \end{align*}
 $$
