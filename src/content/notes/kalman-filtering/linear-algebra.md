@@ -47,3 +47,78 @@ $$
 $$
 
 ### Matrix-Vector Product
+
+A matrix of dimension $m \times n$ and a vector of dimension $n \times 1$ can be multiplied with the following form.
+
+$$
+    \bm{y} = A \bm{x} =
+    \begin{bmatrix}
+    A_{1,1} & \ldots & A_{1,n} \\
+    \vdots  & \ddots & \vdots \\
+    A_{m,1} &\ldots  & A_{m, n} \\
+    \end{bmatrix}
+    \begin{bmatrix}
+    x_1 \\
+    \vdots \\
+    x_n \\
+    \end{bmatrix}
+$$
+
+### Quadratic Form
+
+Quadratic form is expressed below, with the dimensions of each element annotated.
+
+$$
+    \overbrace{\alpha}^{1 \times 1} =
+    \underbrace{\bm{x}^T}_{1 \times n}
+    \overbrace{A}^{n \times n}
+    \underbrace{\bm{x}}_{n \times 1}
+$$
+
+### Matrix-Matrix Product
+
+Matrices can be multiplied with each other, as long as they satisfy the dimensional requirements outlined below.
+
+$$
+    \underbrace{C}_{n \times m} =
+    \overbrace{A}^{n \times p}
+    \underbrace{B}_{p \times m}
+$$
+
+And, in general, $AB \neq BA$.
+
+### Scalar and Vector Functions
+
+A scalar function of a scalar has the following form, where $t$ is an independent variable and $\alpha$ is a dependent variable.
+
+$$
+    \alpha = \alpha (t)
+$$
+
+A scalar function of a vector has the following form, where $x_1, \ldots , x_n$ are independent variables and $\alpha$ is a dependent variable.
+
+$$
+    \alpha = \alpha (\bm{x}) = \alpha (x_1, \ldots, x_n)
+$$
+
+A vector function of a vector has the following form.
+
+$$
+    \bm{y} =
+    \begin{bmatrix}
+    y_{1}(x_{1}, \ldots ,x_m) \\
+    \ldots \\
+    y_{n}(x_{1}, \ldots ,x_m)
+    \end{bmatrix} =
+    \overbrace{\bm{y}}^{n \times 1}(\underbrace{\bm{x}}_{m \times 1})
+$$
+
+### Scalar and Vector Derivatives
+
+A scalar derivative has the following form.
+
+A vector derivative has the following form.
+
+A gradient vector derivative has the following form.
+
+### Rank
