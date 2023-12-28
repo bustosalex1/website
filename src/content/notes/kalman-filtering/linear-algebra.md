@@ -117,8 +117,115 @@ $$
 
 A scalar derivative has the following form.
 
+$$
+\begin{align*}
+    \alpha &= \alpha (t) \\
+    \dot{\alpha} &= \frac{d \alpha (t)}{dt}
+\end{align*}
+$$
+
 A vector derivative has the following form.
 
-A gradient vector derivative has the following form.
+$$
+\begin{align*}
+    \bm{x} &=
+\begin{bmatrix}
+    x_1(t) \\
+    \vdots \\
+    x_n(t) \\
+\end{bmatrix} \\
+\dot{\bm{x}} =
+\frac{d \bm{x}}{dt} &=
+\begin{bmatrix}
+    \frac{d x_1}{dt} \\
+    \vdots \\
+    \frac{d x_n}{dt}
+\end{bmatrix}
+\end{align*}
+$$
+
+For a scalar function of a vector, the **gradient** vector derivative has the following form.
+
+$$
+\begin{align*}
+    \alpha &= \alpha (x_{1}, \ldots , x_{n}) = \alpha (\bm{x}) \\
+    \frac{d \alpha }{ d \bm{x} } &=
+    \begin{bmatrix}
+    \frac{\partial \alpha }{\partial x_1} & \ldots & \frac{\partial \alpha}{\partial x_n}
+    \end{bmatrix}
+\end{align*}
+$$
+
+For a vector function of a vector, the gradient vector derivative has the following form.
+
+$$
+\begin{align*}
+    \bm{y} = \bm{y}(\bm{x}) &=
+    \begin{bmatrix}
+    y_1(x_1, \ldots , x_n) \\
+    \vdots \\
+    y_m(x_1, \ldots , x_n)
+    \end{bmatrix} \\
+    \frac{d \bm{y}}{d \bm{x}} &=
+    \underbrace{
+    \begin{bmatrix}
+    \frac{\partial y_1}{\partial x_1} & \ldots & \frac{\partial y_1}{\partial x_n} \\
+    \vdots & \ddots & \vdots \\
+    \frac{\partial y_m}{\partial x_1} & \ldots & \frac{\partial y_m}{\partial x_n}
+    \end{bmatrix}}_{m \times n}
+\end{align*}
+$$
 
 ### Rank
+
+**Rank** is the number of linearly independent rows or columns of a matrix. It can also be thought
+of as the largest non-singular sub-matrix dimension, although I don't really understand what that
+means.
+
+For example,
+
+$$
+\begin{align*}
+A &= \begin{bmatrix}
+    1 & 1 \\
+    1 & -1
+\end{bmatrix} \\
+det(A) &\neq 0 \\
+&\therefore \text{A has rank 2.}
+\end{align*}
+$$
+
+As another example,
+
+$$
+\begin{align*}
+    &A =
+    \begin{bmatrix}
+    1 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 2 & 0 \\
+    0 & 0 & 1 & 0 & 3 \\
+    0 & 0 & 1 & 0 & 3 \\
+    0 & 0 & 3 & 2 & 6 \\
+    \end{bmatrix} \\
+    &\text{Observe that } R_4 = R_2 + 2R_3 \\
+    &\therefore A \text{ has 3 linearly independent rows, so its rank is 3.}
+\end{align*}
+$$
+
+As a final example,
+
+$$
+\begin{align*}
+    \bm{x} &=
+    \begin{bmatrix}
+    1 \\ 2 \\ 3
+    \end{bmatrix} \\
+    \bm{x} \bm{x}^T &= \begin{bmatrix}
+    1 & 2 & 3 \\
+    2 & 4 & 6 \\
+    3 & 6 & 9
+    \end{bmatrix} \\
+    &\text{All rows and columns are multiples of } R_1 \text{.} \\
+    &\therefore A \text{ has rank 1.}
+\end{align*}
+$$
