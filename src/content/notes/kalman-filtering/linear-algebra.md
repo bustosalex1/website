@@ -212,7 +212,7 @@ $$
 \end{align*}
 $$
 
-As a final example,
+And as a final example,
 
 $$
 \begin{align*}
