@@ -1,29 +1,21 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import NoteMenu from "@components/NoteMenu.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+import Search from "@components/Search.svelte";
+import { getCollection } from "astro:content";
 const allNotes = await getCollection("notes");
-
-const classes = new Map<string, CollectionEntry<"notes">[]>();
-
-allNotes.forEach((note) => {
-    if (classes.has(note.data.class)) {
-        classes.get(note.data.class)?.push(note);
-    } else {
-        classes.set(note.data.class, [note]);
-    }
-});
+const noteSearchKeys = ["body", "data.title"];
 
 const pageTitle = "Notes";
 ---
 
 <NoteMenu>
     <BaseLayout pageTitle={pageTitle}>
-        <article
-            class="prose text-justify leading-snug mx-auto pb-20 prose-h3:m-0 w-full max-w-none"
-        >
-            <h2 class="text-left py-0 px-0 my-1">Notes</h2>
-            <p>Just some notes.</p>
-        </article>
+        <div class="pt-4">
+            <div class="pb-2">
+                <div class="text-2xl font-bold text-center">Alex's Notes</div>
+            </div>
+            <Search keys={noteSearchKeys} posts={allNotes} client:load />
+        </div>
     </BaseLayout>
 </NoteMenu>

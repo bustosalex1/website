@@ -5,13 +5,18 @@
  * theme toggle.
  */
 import ThemeToggle from "@components/ThemeToggle.astro";
-let currentPage = Astro.url.pathname;
+import Search from "./Search.svelte";
+import { getCollection } from "astro:content";
+const allNotes = await getCollection("notes");
 
+const noteSearchKeys = ["body", "data.title"];
+let currentPage = Astro.url.pathname;
 const links = [
     ["Projects", "/"],
     // ["Posts", "/posts/"],
     ["Notes", "/notes/"],
 ];
+console.log(currentPage);
 ---
 
 <div class="flex flex-row w-full items-center">
@@ -46,7 +51,21 @@ const links = [
         })
     }
     <!-- this div is to space the ThemeToggle to be at the opposite end of the flex box -->
-    <div class="flex-grow"></div>
+    {
+        currentPage === "/notes/" || !currentPage.includes("notes") ? (
+            <div class="flex-grow" />
+        ) : (
+            <div class="w-full pr-5">
+                <Search
+                    posts={allNotes}
+                    keys={noteSearchKeys}
+                    dropdown={true}
+                    client:load
+                />
+            </div>
+        )
+    }
+
     <div class="flex items-center">
         <ThemeToggle />
     </div>
