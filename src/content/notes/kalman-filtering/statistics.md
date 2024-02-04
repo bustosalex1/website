@@ -31,7 +31,7 @@ $$
 $$
 
 As an aside, the term "if and only if", represented by $\iff$, implies a two-way argument. For
-example
+example,
 
 $$
     \text{You are younger than me if and only if I am older than you.}
@@ -45,3 +45,7 @@ $$
     &\text{but the inverse is not necessarily true.}
 \end{align*}
 $$
+
+The **Universal Set**, $\mathbb{U}$, contains everything. All sets are a subset of $\mathbb{U}$. The **Null Set**, $\emptyset$, contains no elements.
+
+![jk](../../../assets/notes/kalman-filtering/statistics/drawing.svg)
