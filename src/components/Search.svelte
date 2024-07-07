@@ -31,7 +31,7 @@
     <input
         type="text"
         class="input input-bordered input-sm w-full"
-        placeholder="Fuzzy find notes..."
+        placeholder="Search notes..."
         bind:value={searchValue}
         tabindex="0"
     />
