@@ -26,6 +26,9 @@
     }
 </script>
 
+<!--@component
+Simple search box that uses `fuse.js` to fuzzy find results across my `notes` collection.
+-->
 <div class="w-full" class:dropdown>
     <!-- search box -->
     <input
