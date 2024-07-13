@@ -5,7 +5,7 @@
 </script>
 
 <div
-    class="flex flex-col w-full gap-1 rounded-md ring-1 ring-neutral-400 p-2 bg-base-100 drop-shadow-md"
+    class="flex flex-col w-full gap-1 rounded-md ring-1 ring-base-content/20 p-2 bg-base-100 drop-shadow-md"
 >
     <div class="flex flex-row justify-between items-center">
         <a href={"/notes/" + result.item.slug} class="hoverable"
