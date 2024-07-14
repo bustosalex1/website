@@ -25,15 +25,17 @@ import { modes } from "@styles/modes";
     import { modes } from "@styles/modes";
 
     document.addEventListener("DOMContentLoaded", () => {
-        let theme = localStorage.getItem("theme");
         const checkbox = document.getElementById(
             "theme-toggle",
         ) as HTMLInputElement;
-        checkbox.checked = theme === modes.dark;
+        checkbox.checked = localStorage.getItem("theme") === modes.dark;
+
+        // add listener to save theme to Local Storage when theme toggle is clicked.
         checkbox.addEventListener("click", () => {
+            const theme = localStorage.getItem("theme");
             localStorage.setItem(
                 "theme",
-                theme === modes.dark ? modes.light : modes.dark,
+                theme === modes.dark ? modes.dark : modes.light,
             );
         });
     });
