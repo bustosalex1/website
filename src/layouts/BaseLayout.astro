@@ -17,11 +17,11 @@ interface Props {
 const { pageTitle, fullWidth } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="bg-sane-bg">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-        <!-- KaTeX -->
+        <!--KaTeX-->
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
@@ -36,11 +36,6 @@ const { pageTitle, fullWidth } = Astro.props;
             const theme = localStorage.getItem("theme");
             if (theme !== null) {
                 document.documentElement.setAttribute("data-theme", theme);
-            } else {
-                document.documentElement.setAttribute(
-                    "data-theme",
-                    modes.light,
-                );
             }
         </script>
         <script>

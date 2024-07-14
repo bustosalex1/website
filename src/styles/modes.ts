@@ -6,5 +6,5 @@
  */
 export const modes = {
     light: "bumblebee",
-    dark: "sunset",
+    dark: "dracula",
 };
