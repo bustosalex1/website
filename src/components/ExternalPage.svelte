@@ -15,7 +15,7 @@ my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
-    class={`rounded-md ring-base-content/20 ring-1 bg-base-100 ${selected ? "fixed top-0 left-0 h-screen w-screen z-50" : "h-full overflow-clip"}`}
+    class={`flex flex-col rounded-md ring-base-content/20 ring-1 bg-base-100 ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip"}`}
 >
     <!--row providing a title and some buttons to full screen or go to the page-->
     <div
@@ -38,9 +38,5 @@ my website.
             >
         </div>
     </div>
-    <iframe
-        src={link}
-        class={`w-full min-h-fit max-h-none ${selected ? "h-full" : "h-[75vh]"}`}
-        {title}
-    ></iframe>
+    <iframe src={link} class={`w-full flex-1 h-full`} {title}></iframe>
 </div>
