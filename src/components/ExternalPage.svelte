@@ -18,7 +18,7 @@ my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
-    class={`my-2 flex flex-col ring-1 bg-base-100 ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip rounded-md ring-base-content/20 ring-1"}`}
+    class={`flex flex-col ring-1 bg-base-100 ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip rounded-md ring-base-content/20 ring-1 my-2"}`}
 >
     <!--row providing a title and some buttons to full screen or go to the page-->
     <div
