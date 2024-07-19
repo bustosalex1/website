@@ -1,4 +1,7 @@
 <script lang="ts">
+    import Launch from "~icons/carbon/launch";
+    import Maximize from "~icons/carbon/maximize";
+    import Minimize from "~icons/carbon/minimize";
     /** The URL of the page to link to. */
     export let link: string;
 
@@ -15,7 +18,7 @@ my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
-    class={`flex flex-col ring-1 bg-base-100 ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip rounded-md ring-base-content/20 ring-1"}`}
+    class={`my-2 flex flex-col ring-1 bg-base-100 ${selected ? "fixed top-0 left-0 h-screen w-screen z-50 overflow-auto" : "h-[75vh] overflow-clip rounded-md ring-base-content/20 ring-1"}`}
 >
     <!--row providing a title and some buttons to full screen or go to the page-->
     <div
@@ -24,19 +27,27 @@ my website.
         <div class="font-semibold">{title}</div>
 
         <div class="flex flex-row space-x-1">
+            <a
+                class="btn btn-xs btn-square btn-ghost"
+                href={link}
+                target="_blank"
+            >
+                <Launch class="w-4 h-4" />
+            </a>
             <button
-                class="btn btn-xs btn-ghost"
+                class="btn btn-xs btn-square btn-ghost"
                 on:click={() => {
                     selected = !selected;
-                }}>Go to Page</button
+                }}
             >
-            <button
-                class="btn btn-xs btn-ghost"
-                on:click={() => {
-                    selected = !selected;
-                }}>Full Screen</button
-            >
+                {#if selected}
+                    <Minimize class="w-4 h-4" />
+                {:else}
+                    <Maximize class="w-4 h-4" />
+                {/if}
+            </button>
         </div>
     </div>
+    <!--the actual external page content-->
     <iframe src={link} class={`w-full flex-1 h-full`} {title}></iframe>
 </div>

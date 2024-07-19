@@ -9,6 +9,9 @@
             "@assets/*": ["src/assets/*"],
             "@styles/*": ["src/styles/*"]
         },
+        "types": [
+            "unplugin-icons/types/astro"
+        ],
         "plugins": [
             {
                 "name": "@astrojs/ts-plugin"
