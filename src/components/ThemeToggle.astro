@@ -2,6 +2,8 @@
 /**
  * A toggle that makes use of the `theme-change` package to switch between `light` and `dark` modes.
  */
+import Sun from "~icons/line-md/sunny-outline-loop";
+import Moon from "~icons/line-md/moon-alt-loop";
 import { modes } from "@styles/modes";
 ---
 
@@ -15,10 +17,10 @@ import { modes } from "@styles/modes";
     />
 
     <!-- sun icon (shows when dark mode is enabled) -->
-    <span class="icon-[line-md--sunny-outline-loop] w-5 h-5 swap-on"></span>
+    <Sun class="w-5 h-5 swap-on" />
 
     <!-- moon icon (shows when light mode is enabled) -->
-    <span class="icon-[line-md--moon-alt-loop] w-5 h-5 swap-off"></span>
+    <Moon class="w-5 h-5 swap-off" />
 </label>
 
 <script>
