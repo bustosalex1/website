@@ -6,6 +6,7 @@
  */
 import ThemeToggle from "@components/ThemeToggle.astro";
 import Search from "./Search.svelte";
+import Menu from "~icons/line-md/menu";
 import { getCollection } from "astro:content";
 const allNotes = await getCollection("notes");
 
@@ -13,7 +14,6 @@ const noteSearchKeys = ["body", "data.title"];
 let currentPage = Astro.url.pathname;
 const links = [
     ["Projects", "/"],
-    // ["Posts", "/posts/"],
     ["Notes", "/notes/"],
 ];
 ---
@@ -24,8 +24,10 @@ const links = [
         currentPage.includes("notes") ? (
             <label
                 for="notes-drawer"
-                class="btn btn-xs drawer-button icon-[line-md--menu] w-5 h-5 hover:bg-primary lg:hidden flex-shrink-0 mr-5"
-            />
+                class="drawer-button lg:hidden flex-shrink-0 mr-5  bg-none cursor-pointer hover:text-primary transition-all duration-300"
+            >
+                <Menu class="w-5 h-5" />
+            </label>
         ) : (
             <a href="/" class="font-bold whitespace-nowrap pr-5">
                 Alex Bustos
