@@ -3,13 +3,16 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import NoteMenu from "@components/NoteMenu.astro";
 import Search from "@components/Search.svelte";
 import { getCollection } from "astro:content";
-const allNotes = await getCollection("notes");
+
+const allNotes = (await getCollection("notes")).filter(
+    (note) => !note.data.draft,
+);
 const noteSearchKeys = ["body", "data.title"];
 
 const pageTitle = "Notes";
 ---
 
-<NoteMenu>
+<NoteMenu notes={allNotes}>
     <BaseLayout pageTitle={pageTitle}>
         <div class="pt-4">
             <div class="pb-2">

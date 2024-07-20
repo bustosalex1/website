@@ -6,12 +6,16 @@
  * that can be used to access the notes menu. Which... maybe that's like bad in terms of coupling.
  */
 import { getCollection, type CollectionEntry } from "astro:content";
-const allNotes = await getCollection("notes");
 
+interface Props {
+    notes: CollectionEntry<"notes">[];
+}
+
+const { notes } = Astro.props;
 // organize notes according to class
 const classes = new Map<string, CollectionEntry<"notes">[]>();
 
-allNotes.forEach((note) => {
+notes.forEach((note) => {
     if (classes.has(note.data.class)) {
         classes.get(note.data.class)?.push(note);
     } else {

@@ -6,10 +6,13 @@
 import FormattedDate from "@components/FormattedDate.astro";
 import NoteMenu from "@components/NoteMenu.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 const { data } = Astro.props;
+
+const notes = (await getCollection("notes")).filter((note) => !note.data.draft);
 ---
 
-<NoteMenu>
+<NoteMenu notes={notes}>
     <BaseLayout pageTitle={data.title}>
         <article
             class="prose prose-img:rounded-md prose-img:my-0 prose-img:w-full text-justify leading-snug mx-auto
