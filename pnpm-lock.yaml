@@ -29,6 +29,9 @@ importers:
       fuse.js:
         specifier: ^7.0.0
         version: 7.0.0
+      katex:
+        specifier: ^0.16.11
+        version: 0.16.11
       rehype-katex:
         specifier: ^7.0.0
         version: 7.0.0
