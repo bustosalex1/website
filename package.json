@@ -9,7 +9,7 @@
         "build": "pnpm stamp && astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "format": "prettier . --write --plugin=prettier-plugin-astro"
+        "format": "prettier . --write"
     },
     "dependencies": {
         "@astrojs/mdx": "^3.1.3",

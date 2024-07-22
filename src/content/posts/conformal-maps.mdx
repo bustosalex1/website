@@ -9,10 +9,11 @@ project: true
 tags: ["Math", "School", "React"]
 fullWidth: true
 ---
-import ExternalPage from "@components/ExternalPage.svelte"
+
+import ExternalPage from "@components/ExternalPage.svelte";
 
 <div class="py-2">
-    <ExternalPage client:load link="https://alexbustos.com/phys-6124"/>
+    <ExternalPage client:load link="https://alexbustos.com/phys-6124" />
 </div>
 
 ### Overview
@@ -29,6 +30,7 @@ D3.js, so I decided to try and tailor my final project for the class to fit in s
 interests.
 
 ### Implementation
+
 The project page shown above is basically intended to give some sort of greater understanding to
 conformal maps by allowing users to see how different maps transition to each other, and how panning
 and rotating a map affects its contents.
