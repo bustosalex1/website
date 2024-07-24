@@ -9,7 +9,8 @@
         "build": "pnpm stamp && astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "format": "prettier . --write"
+        "format": "prettier . --write",
+        "lint": "prettier --check . && eslint . && svelte-check --tsconfig ./tsconfig.json"
     },
     "dependencies": {
         "@astrojs/mdx": "^3.1.3",
@@ -31,16 +32,20 @@
         "@iconify-json/line-md": "^1.1.38",
         "@iconify-json/octicon": "^1.1.56",
         "@tailwindcss/typography": "^0.5.13",
+        "@types/eslint": "^9.6.0",
         "autoprefixer": "^10.4.19",
         "eslint": "^9.7.0",
-        "eslint-plugin-astro": "^1.2.3",
+        "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-svelte": "^2.43.0",
+        "globals": "15.0.0",
         "postcss": "^8.4.39",
         "prettier": "^3.3.3",
         "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-svelte": "^3.2.6",
         "sharp": "^0.33.4",
+        "svelte-check": "^3.8.4",
         "typescript": "^5.5.4",
+        "typescript-eslint": "8.0.0-alpha.20",
         "unplugin-icons": "^0.19.0",
         "vite": "^5.3.4"
     }
