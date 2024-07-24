@@ -5,23 +5,44 @@
  * theme toggle.
  */
 import ThemeToggle from "@components/ThemeToggle.astro";
-let currentPage = Astro.url.pathname;
+import Search from "./Search.svelte";
+import Menu from "~icons/line-md/menu";
+import { getCollection } from "astro:content";
+const allNotes = (await getCollection("notes")).filter(
+    (note) => !note.data.draft,
+);
 
+const noteSearchKeys = ["body", "data.title"];
+let currentPage = Astro.url.pathname;
 const links = [
     ["Projects", "/"],
-    ["Posts", "/posts/"],
-    // ["Resume", "/tags/"],
+    ["Notes", "/notes/"],
 ];
 ---
 
-<div class="flex flex-row space-x-5 w-full">
-    <a href="/" class="font-bold whitespace-nowrap">Alex Bustos</a>
+<div class="flex flex-row w-full items-center">
+    <!-- only render "Alex Bustos" when we're not on the notes page -->
+    {
+        currentPage.includes("notes") ? (
+            <label
+                for="notes-drawer"
+                class="drawer-button lg:hidden flex-shrink-0 mr-5  bg-none cursor-pointer hover:text-primary transition-all duration-300"
+            >
+                <Menu class="w-5 h-5" />
+            </label>
+        ) : (
+            <a href="/" class="font-bold whitespace-nowrap pr-5">
+                Alex Bustos
+            </a>
+        )
+    }
+
     {
         links.map(([title, link]) => {
             return (
                 <a
                     href={link}
-                    class="hoverable"
+                    class="hoverable pr-5"
                     class:list={[
                         { underline: currentPage === link },
                         { "text-primary": currentPage === link },
@@ -32,7 +53,23 @@ const links = [
             );
         })
     }
-    <div class="flex-grow"></div>
+
+    <!-- this div is to space the ThemeToggle to be at the opposite end of the flex box -->
+    {
+        currentPage === "/notes/" || !currentPage.includes("notes") ? (
+            <div class="flex-grow" />
+        ) : (
+            <div class="w-full pr-5">
+                <Search
+                    posts={allNotes}
+                    keys={noteSearchKeys}
+                    dropdown={true}
+                    client:load
+                />
+            </div>
+        )
+    }
+
     <div class="flex items-center">
         <ThemeToggle />
     </div>

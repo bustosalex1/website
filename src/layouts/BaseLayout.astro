@@ -6,12 +6,18 @@
  */
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
-import "../styles/global.css";
-import { modes } from "../styles/modes";
-const { pageTitle } = Astro.props;
+import "@styles/global.css";
+import "katex/dist/katex.min.css";
+
+interface Props {
+    pageTitle: string;
+    fullWidth?: boolean;
+}
+
+const { pageTitle, fullWidth } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="bg-sane-bg">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
@@ -19,18 +25,11 @@ const { pageTitle } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>Alex Bustos | {pageTitle}</title>
         <script is:inline>
-            // ☝️ This script prevent the FART effect.
+            // `theme-change` said I needed this!
             const theme = localStorage.getItem("theme");
             if (theme !== null) {
                 document.documentElement.setAttribute("data-theme", theme);
-            } else {
-                document.documentElement.setAttribute(
-                    "data-theme",
-                    modes.light,
-                );
             }
-            // "theme" LocalStorage value is set by the package to remember user preference.
-            // The value is checked and applyed before rendering anything.
         </script>
         <script>
             import { themeChange } from "theme-change";
@@ -39,7 +38,9 @@ const { pageTitle } = Astro.props;
     </head>
 
     <body>
-        <div class="flex flex-col w-[90vw] md:w-[50vw] mx-auto my-3 space-y-2">
+        <div
+            class={`flex flex-col w-[90vw] ${fullWidth ? "lg:w-[90vw]" : "lg:w-[50vw]"} mx-auto my-3 space-y-2`}
+        >
             <Header />
             <slot />
             <Footer />
