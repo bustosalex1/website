@@ -27,6 +27,7 @@ with curves and surfaces in a 3D environment and visualize how each of the contr
 curve affect the value of the curve (shown by enabling the `Indicator`) at a given point.
 
 ### Context
+
 I won't go into a ton of detail about Bézier curves and surfaces here (there's some great
 explanations out there already, like [this one](https://www.youtube.com/watch?v=aVwxzDHniEw) by
 Freya Holmér). For a bit of context though, Bézier curves are made up of some number of control
@@ -49,13 +50,14 @@ i
 $$
 
 In this equation, variables have the following significance:
-- $0 \leq u \leq 1$ represents the relative distance between the start and end point
-  of the Bézier curve (it's $1$ at the end of the curve and $0$ at the end).
-- $i$ is an integer that represents the index of the control point, (the starting point of the
-  Bézier curve would have $i = 0$, the second point of the curve would have $i = 1$, and so on).
-- $n$ is an integer that represents the order of the Bézier curve and is simply equal to $\text{the
+
+-   $0 \leq u \leq 1$ represents the relative distance between the start and end point
+    of the Bézier curve (it's $1$ at the end of the curve and $0$ at the end).
+-   $i$ is an integer that represents the index of the control point, (the starting point of the
+    Bézier curve would have $i = 0$, the second point of the curve would have $i = 1$, and so on).
+-   $n$ is an integer that represents the order of the Bézier curve and is simply equal to $\text{the
   number of control points in the curve} - 1$ (a curve with 4 control points would have $n=3$, for
-  example).
+    example).
 
 The app evaluates the value of the user-editable Bézier curve displayed in the 3D window at the $u$
 value of the `Indicator`. It also preserves the values of each of the basis functions used to

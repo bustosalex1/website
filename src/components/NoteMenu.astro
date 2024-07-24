@@ -5,7 +5,7 @@
  * and be hidden on smaller screens like phones. On these screens there's a button on the nav bar
  * that can be used to access the notes menu. Which... maybe that's like bad in terms of coupling.
  */
-import { getCollection, type CollectionEntry } from "astro:content";
+import { type CollectionEntry } from "astro:content";
 
 interface Props {
     notes: CollectionEntry<"notes">[];

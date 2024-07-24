@@ -8,7 +8,9 @@ import ThemeToggle from "@components/ThemeToggle.astro";
 import Search from "./Search.svelte";
 import Menu from "~icons/line-md/menu";
 import { getCollection } from "astro:content";
-const allNotes = await getCollection("notes");
+const allNotes = (await getCollection("notes")).filter(
+    (note) => !note.data.draft,
+);
 
 const noteSearchKeys = ["body", "data.title"];
 let currentPage = Astro.url.pathname;
