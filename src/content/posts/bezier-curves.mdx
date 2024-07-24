@@ -46,7 +46,7 @@ $$
 B_{i,n}(u) = \begin{pmatrix}
 n \\
 i
-\end{pmatrix} u^i (1-u)^{n-i} \\
+\end{pmatrix} u^i (1-u)^{n-i}
 $$
 
 In this equation, variables have the following significance:
@@ -55,8 +55,8 @@ In this equation, variables have the following significance:
     of the Bézier curve (it's $1$ at the end of the curve and $0$ at the end).
 -   $i$ is an integer that represents the index of the control point, (the starting point of the
     Bézier curve would have $i = 0$, the second point of the curve would have $i = 1$, and so on).
--   $n$ is an integer that represents the order of the Bézier curve and is simply equal to $\text{the
-  number of control points in the curve} - 1$ (a curve with 4 control points would have $n=3$, for
+-   $n$ is an integer that represents the order of the Bézier curve and is simply equal to the
+    number of control points in the curve - 1 (a curve with 4 control points would have $n=3$, for
     example).
 
 The app evaluates the value of the user-editable Bézier curve displayed in the 3D window at the $u$
