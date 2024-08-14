@@ -57,7 +57,7 @@ set to `below` to permanently display the caption below the image.
             {caption}
         </div>
     {:else if caption && captionMode === "below"}
-        <em>{caption}</em>
+        <em class="text-center">{caption}</em>
     {/if}
 </button>
 
