@@ -15,7 +15,7 @@ const notes = (await getCollection("notes")).filter((note) => !note.data.draft);
 <NoteMenu notes={notes}>
     <BaseLayout pageTitle={data.title}>
         <article
-            class="prose prose-img:rounded-md prose-img:my-0 prose-img:w-full text-justify leading-snug mx-auto
+            class="prose prose-img:rounded-md prose-img:my-0 prose-img:w-full leading-snug mx-auto
             pb-20 prose-h3:m-0 w-full max-w-none"
         >
             <h2 class="text-left py-0 px-0 my-1">
@@ -40,5 +40,6 @@ const notes = (await getCollection("notes")).filter((note) => !note.data.draft);
     img + em {
         @apply flex;
         @apply justify-center;
+        @apply text-center;
     }
 </style>

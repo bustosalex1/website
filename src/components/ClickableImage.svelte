@@ -43,12 +43,12 @@ set to `below` to permanently display the caption below the image.
 <!-- default image -->
 <button
     on:click={toggleModal}
-    class="relative cursor-pointer overflow-hidden rounded-md"
+    class="relative cursor-pointer overflow-hidden rounded-md mx-auto block"
     on:mouseenter={() => (hovered = true)}
     on:mouseleave={() => (hovered = false)}
 >
     <slot />
-    <!-- if hoverCaption is defined, only show the caption on hover. otherwise, just show the caption without any animation -->
+    <!-- if `hoverCaption` is defined, only show the caption on hover. otherwise, just show the caption without any animation -->
     {#if hovered && caption && captionMode === "hover"}
         <div
             class="absolute bottom-0 left-0 h-auto w-full bg-black bg-opacity-70 p-2 rounded-b-md text-white flex justify-start items-center text-left"
@@ -57,7 +57,7 @@ set to `below` to permanently display the caption below the image.
             {caption}
         </div>
     {:else if caption && captionMode === "below"}
-        <em>{caption}</em>
+        <em class="text-center">{caption}</em>
     {/if}
 </button>
 
@@ -77,7 +77,7 @@ set to `below` to permanently display the caption below the image.
                 <img
                     src={imgSrc}
                     alt={caption}
-                    class="w-auto h-auto max-h-full object-contain"
+                    class="w-auto h-auto max-h-full object-contain rounded-md not-prose"
                 />
             {/if}
             {#if caption}
