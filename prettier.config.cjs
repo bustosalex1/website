@@ -17,5 +17,12 @@ module.exports = {
                 parser: "svelte",
             },
         },
+
+        {
+            files: ["*.md", "*.mdx"],
+            options: {
+                proseWrap: "always",
+            },
+        },
     ],
 };

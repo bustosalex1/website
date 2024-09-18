@@ -7,8 +7,8 @@ title: "NumPy Cheatsheet"
 
 ### Indexing
 
--   To get a row of a two-dimensional array as a one-dimensional
-    array, you can use a single index. For example:
+-   To get a row of a two-dimensional array as a one-dimensional array, you can
+    use a single index. For example:
 
     ```python
     import numpy as np
@@ -65,9 +65,10 @@ title: "NumPy Cheatsheet"
 
 -   Suppose we want to add two arrays, `A` and `B`.
 
-    -   Moving backwards from the last dimension of each array, we check if their
-        dimensions are compatible.
-    -   **Dimensions are compatible if they are equal or either of them is one.**
+    -   Moving backwards from the last dimension of each array, we check if
+        their dimensions are compatible.
+    -   **Dimensions are compatible if they are equal or either of them is
+        one.**
     -   If all of `A`'s dimensions are compatible with `B`'s dimensions, or vice
         versa, they are compatible arrays.
 
@@ -87,8 +88,8 @@ title: "NumPy Cheatsheet"
     print(A[np.newaxis, :].shape)  # prints (1, 4)
     ```
 
--   You can reshape arrays in-place by modifying the `shape` attribute instead of
-    using `reshape`. For example:
+-   You can reshape arrays in-place by modifying the `shape` attribute instead
+    of using `reshape`. For example:
 
     ```python
     import numpy as np
@@ -114,6 +115,6 @@ title: "NumPy Cheatsheet"
 
 -   `np.nan` is a special floating point constant. It cannot be inserted into
     arrays of non-floating point values.
--   Use `np.isnan()` to find `np.nan` values in an array. `np.nan` is designed in
-    such a way that `np.nan == np.nan` evaluates to `False`, but `np.nan != np.nan`
-    evaluates to `True.`
+-   Use `np.isnan()` to find `np.nan` values in an array. `np.nan` is designed
+    in such a way that `np.nan == np.nan` evaluates to `False`, but
+    `np.nan != np.nan` evaluates to `True.`

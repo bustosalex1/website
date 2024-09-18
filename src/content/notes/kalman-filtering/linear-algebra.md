@@ -5,13 +5,14 @@ pubDate: 2022-1-12
 title: "Linear Algebra Review"
 ---
 
-In order to understand how Kalman Filter theory is developed, it is useful to review fundamental
-linear algebra principles.
+In order to understand how Kalman Filter theory is developed, it is useful to
+review fundamental linear algebra principles.
 
 ### Column Vector
 
-A **column vector** is an array of $n$ elements (which can be scalars or functions) arranged in a
-column. In this class, by default, the term _vector_ implies a column vector.
+A **column vector** is an array of $n$ elements (which can be scalars or
+functions) arranged in a column. In this class, by default, the term _vector_
+implies a column vector.
 
 $$
 \bm{x}(t) =
@@ -48,7 +49,8 @@ $$
 
 ### Matrix-Vector Product
 
-A matrix of dimension $m \times n$ and a vector of dimension $n \times 1$ can be multiplied with the following form.
+A matrix of dimension $m \times n$ and a vector of dimension $n \times 1$ can be
+multiplied with the following form.
 
 $$
     \bm{y} = A \bm{x} =
@@ -66,7 +68,8 @@ $$
 
 ### Quadratic Form
 
-Quadratic form is expressed below, with the dimensions of each element annotated.
+Quadratic form is expressed below, with the dimensions of each element
+annotated.
 
 $$
     \overbrace{\alpha}^{1 \times 1} =
@@ -77,7 +80,8 @@ $$
 
 ### Matrix-Matrix Product
 
-Matrices can be multiplied with each other, as long as they satisfy the dimensional requirements outlined below.
+Matrices can be multiplied with each other, as long as they satisfy the
+dimensional requirements outlined below.
 
 $$
     \underbrace{C}_{n \times m} =
@@ -89,13 +93,15 @@ And, in general, $AB \neq BA$.
 
 ### Scalar and Vector Functions
 
-A scalar function of a scalar has the following form, where $t$ is an independent variable and $\alpha$ is a dependent variable.
+A scalar function of a scalar has the following form, where $t$ is an
+independent variable and $\alpha$ is a dependent variable.
 
 $$
     \alpha = \alpha (t)
 $$
 
-A scalar function of a vector has the following form, where $x_1, \ldots , x_n$ are independent variables and $\alpha$ is a dependent variable.
+A scalar function of a vector has the following form, where $x_1, \ldots , x_n$
+are independent variables and $\alpha$ is a dependent variable.
 
 $$
     \alpha = \alpha (\bm{x}) = \alpha (x_1, \ldots, x_n)
@@ -144,7 +150,8 @@ $$
 \end{align*}
 $$
 
-For a scalar function of a vector, the **gradient** vector derivative has the following form.
+For a scalar function of a vector, the **gradient** vector derivative has the
+following form.
 
 $$
 \begin{align*}
@@ -156,7 +163,8 @@ $$
 \end{align*}
 $$
 
-For a vector function of a vector, the gradient vector derivative has the following form.
+For a vector function of a vector, the gradient vector derivative has the
+following form.
 
 $$
 \begin{align*}
@@ -178,9 +186,9 @@ $$
 
 ### Rank
 
-**Rank** is the number of linearly independent rows or columns of a matrix. It can also be thought
-of as the largest non-singular sub-matrix dimension, although I don't really understand what that
-means.
+**Rank** is the number of linearly independent rows or columns of a matrix. It
+can also be thought of as the largest non-singular sub-matrix dimension,
+although I don't really understand what that means.
 
 For example,
 
