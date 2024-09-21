@@ -5,6 +5,8 @@ pubDate: 2024-9-18
 title: "NumPy Cheatsheet"
 ---
 
+Things about NumPy that I am prone to forgetting.
+
 ### Indexing
 
 -   To get a row of a two-dimensional array as a one-dimensional array, you can
