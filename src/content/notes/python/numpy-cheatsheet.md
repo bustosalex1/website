@@ -23,7 +23,7 @@ Things about NumPy that I am prone to forgetting.
         ]
     )
 
-    print(bar[0])  # returns array([ 5, 10, 15, 20])
+    print(bar[0])  # prints array([ 5, 10, 15, 20])
     ```
 
 -   To get a row of a two-dimensional array as a two-dimensional array, you can
