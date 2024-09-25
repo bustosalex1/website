@@ -5,7 +5,19 @@ pubDate: 2024-9-18
 title: "NumPy Cheatsheet"
 ---
 
+import axisOrder from "@assets/notes/numpy-cheatsheet/axis-order.svg";
+
 Things about NumPy that I am prone to forgetting.
+
+### Axis Ordering
+
+-   2D NumPy arrays are ordered as shown.
+
+<img
+    src={axisOrder.src}
+    alt="The order of 2D NumPy Arrays."
+    style="width:300px; margin-left: auto; margin-right: auto"
+/>
 
 ### Indexing
 
@@ -120,3 +132,37 @@ Things about NumPy that I am prone to forgetting.
 -   Use `np.isnan()` to find `np.nan` values in an array. `np.nan` is designed
     in such a way that `np.nan == np.nan` evaluates to `False`, but
     `np.nan != np.nan` evaluates to `True.`
+
+### Math Functions
+
+-   NumPy has a number of math functions that behave similarly.
+
+    ```python
+    import numpy as np
+
+    bar = np.array(
+        [
+            [5.0, 2.0, 9.0],
+            [1.0, 0.0, 2.0],
+            [1.0, 7.0, 8.0],
+        ]
+    )
+
+    # prints 35.0, the sum of all elements in `bar`
+    print(np.sum(bar))
+
+    # prints array([7., 9., 19.]), the column sums of the array
+    print(np.sum(bar, axis=0))
+
+    # prints array([16., 3., 16.]), the row sums of the array
+    print(np.sum(bar, axis=1))
+
+    # Note that in the above cases, `sum` returns a 1D array. To retain the
+    # dimensions of `bar`, set `keepdims=True`. For example, the following prints
+    # array[[16.], [3.], [16.]].
+    print(np.sum(bar, axis=1, keepdims=True))
+    ```
+
+-   If any values in an array are `nan` and you try to apply `sum` to the array,
+    it will return `nan`, since by default it is not expecting `nan` values in
+    the array. `np.nansum` will instead treat `nan` values as `0`.
