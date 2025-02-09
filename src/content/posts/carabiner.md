@@ -22,12 +22,12 @@ I designed the carabiner in Fusion 360 so that it could be machined mostly on
 one side, with just a chamfer operation on the opposite side. Here's a rundown
 of the CAM operations I used:
 
--   Face stock with 1/2" endmill
--   2D adaptive clear with progressively smaller endmills, starting at 1/2"
--   Finishing contour with 1/8" endmill
--   2D pocket with 1/16" ball endmill
--   Drill holes with 1/16" drill bit
--   Chamfer with 1/4" chamfer bit
+- Face stock with 1/2" endmill
+- 2D adaptive clear with progressively smaller endmills, starting at 1/2"
+- Finishing contour with 1/8" endmill
+- 2D pocket with 1/16" ball endmill
+- Drill holes with 1/16" drill bit
+- Chamfer with 1/4" chamfer bit
 
 ![machined carabiner in progress](../../assets/posts/carabiner/in-progress-carabiner.webp)
 _Carabiner after initial machining operations._

@@ -2,19 +2,26 @@
     import Launch from "~icons/carbon/launch";
     import Maximize from "~icons/carbon/maximize";
     import Minimize from "~icons/carbon/minimize";
-    /** The URL of the page to link to. */
-    export let link: string;
 
-    /** An optional title to display. if not specified, this defaults to "Project Page".*/
-    export let title = "Project Page";
+    interface Props {
+        /** The URL of the page to link to. */
+        link: string;
+        /**
+         * An optional title to display. if not specified, this defaults to
+         * "Project Page".
+         */
+        title?: string;
+    }
 
-    let selected = false;
+    let { link, title = "Project Page" }: Props = $props();
+
+    let selected = $state(false);
 </script>
 
 <!--@component
-Simple component that wraps an external page in an `iframe` and provides options to full-screen the
-page or go to the page. My intent with this is just to provide a way to embed other web projects on
-my website.
+Simple component that wraps an external page in an `iframe` and provides
+options to full-screen the page or go to the page. My intent with this is just
+to provide a way to embed other web projects on my website.
 -->
 <!--rounded rectangle that wraps the iframe and title.-->
 <div
@@ -36,7 +43,7 @@ my website.
             </a>
             <button
                 class="btn btn-xs btn-square btn-ghost"
-                on:click={() => {
+                onclick={() => {
                     selected = !selected;
                 }}
             >

@@ -2,9 +2,13 @@
     import { type CollectionEntry } from "astro:content";
     import Fuse, { type FuseResult } from "fuse.js";
     import SearchMatch from "./SearchMatch.svelte";
-    export let posts: CollectionEntry<"notes">[];
-    export let dropdown: boolean = false;
-    export let keys: string[];
+    interface Props {
+        posts: CollectionEntry<"notes">[];
+        dropdown?: boolean;
+        keys: string[];
+    }
+
+    let { posts, dropdown = false, keys }: Props = $props();
 
     const fuse = new Fuse(posts, {
         keys: keys,
@@ -14,20 +18,21 @@
         shouldSort: true,
     });
 
-    let results: FuseResult<CollectionEntry<"notes">>[] = [];
-    let searchValue = "";
+    let results: FuseResult<CollectionEntry<"notes">>[] = $state([]);
+    let searchValue = $state("");
 
-    $: {
+    $effect(() => {
         if (searchValue.length > 0) {
             results = fuse.search(searchValue);
         } else {
             results = [];
         }
-    }
+    });
 </script>
 
 <!--@component
-Simple search box that uses `fuse.js` to fuzzy find results across my `notes` collection.
+Simple search box that uses `fuse.js` to fuzzy find results across my `notes`
+collection.
 -->
 <div class="w-full" class:dropdown>
     <!-- search box -->

@@ -1,7 +1,11 @@
 <script lang="ts">
     import { type CollectionEntry } from "astro:content";
     import { type FuseResult } from "fuse.js";
-    export let result: FuseResult<CollectionEntry<"notes">>;
+    interface Props {
+        result: FuseResult<CollectionEntry<"notes">>;
+    }
+
+    let { result }: Props = $props();
 </script>
 
 <div

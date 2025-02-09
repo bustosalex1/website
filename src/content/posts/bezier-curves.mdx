@@ -57,15 +57,15 @@ $$
 
 In this equation, variables have the following significance:
 
--   $0 \leq u \leq 1$ represents the relative distance between the start and end
-    point of the Bézier curve (it's $1$ at the end of the curve and $0$ at the
-    end).
--   $i$ is an integer that represents the index of the control point, (the
-    starting point of the Bézier curve would have $i = 0$, the second point of
-    the curve would have $i = 1$, and so on).
--   $n$ is an integer that represents the order of the Bézier curve and is
-    simply equal to the number of control points in the curve - 1 (a curve with
-    4 control points would have $n=3$, for example).
+- $0 \leq u \leq 1$ represents the relative distance between the start and end
+  point of the Bézier curve (it's $1$ at the end of the curve and $0$ at the
+  end).
+- $i$ is an integer that represents the index of the control point, (the
+  starting point of the Bézier curve would have $i = 0$, the second point of the
+  curve would have $i = 1$, and so on).
+- $n$ is an integer that represents the order of the Bézier curve and is simply
+  equal to the number of control points in the curve - 1 (a curve with 4 control
+  points would have $n=3$, for example).
 
 The app evaluates the value of the user-editable Bézier curve displayed in the
 3D window at the $u$ value of the `Indicator`. It also preserves the values of
