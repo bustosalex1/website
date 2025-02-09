@@ -2,16 +2,23 @@
     import { cubicInOut } from "svelte/easing";
     import { fade, fly } from "svelte/transition";
     interface Props {
-        /** the caption to display below the image. Also used as the image's alt tag */
+        /**
+         * The caption to display below the image. Also used as the image's alt
+         * tag.
+         */
         caption: string | undefined;
         /**
-         * how the caption should be displayed. `hover` will display the caption whenever a user hovers
-         * over the image. `below` will permanently display the caption below the image.
+         * How the caption should be displayed. `hover` will display the
+         * caption whenever a user hovers over the image. `below` will
+         * permanently display the caption below the image.
          */
         captionMode: "hover" | "below" | undefined;
-        /** the source for the image to display */
+        /** The source for the image to display. */
         imgSrc: string | undefined;
-        /** whether or not to display the image in a new tab, instead of in a modal */
+        /**
+         * Whether or not to display the image in a new tab, instead of in a
+         * modal.
+         */
         newTab: true | undefined;
         children?: import("svelte").Snippet;
     }
